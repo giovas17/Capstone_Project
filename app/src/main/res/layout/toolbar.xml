@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        app:elevation="@dimen/appbar_elevation"
+        android:id="@+id/toolbar">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/titleImage"
+            android:src="@drawable/logo_panache"
+            android:visibility="gone"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/title"
+            android:textStyle="bold"
+            android:textColor="@color/textTitle"
+            android:textSize="@dimen/title_appbar"
+            android:layout_gravity="center_horizontal"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <View
+        android:id="@+id/toolbarSeparator"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_2dp"
+        android:background="@android:color/black"
+        android:layout_marginStart="@dimen/space_6dp"
+        android:layout_marginLeft="@dimen/space_6dp"
+        android:layout_marginRight="@dimen/space_6dp"
+        android:layout_marginEnd="@dimen/space_6dp"
+        android:layout_below="@+id/toolbar"/>
+
+</RelativeLayout>

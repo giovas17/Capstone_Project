@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/toolbar"
+    android:padding="@dimen/padding_layout_home"
+    android:layout_marginTop="@dimen/space_2dp"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:paddingBottom="@dimen/space_2dp">
+
+        <ImageView
+            android:id="@+id/imageOfficialMonin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/image_official_monin"
+            android:contentDescription="@string/home_officially_monin"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:onClick="Selector"
+            android:scaleType="centerCrop" />
+
+        <View
+            android:layout_width="@dimen/width_divider_home"
+            android:layout_height="@dimen/height_dividers"
+            android:background="@color/textHomeColor"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="@dimen/margin_divider_home"
+            android:layout_centerVertical="true"
+            android:id="@+id/view" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:text="@string/home_officially_monin"
+            android:textAllCaps="true"
+            android:textColor="@color/textHomeColor"
+            android:gravity="center"
+            android:id="@+id/textOfficiallyTitle"
+            android:layout_above="@+id/view"
+            android:layout_alignLeft="@+id/view"
+            android:layout_alignStart="@+id/view"
+            android:layout_alignRight="@+id/view"
+            android:layout_alignEnd="@+id/view" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:text="@string/home_subtitle_official_monin"
+            android:id="@+id/textView9"
+            android:textAllCaps="true"
+            android:gravity="center"
+            android:textStyle="italic"
+            android:textColor="@color/textHomeColor"
+            android:layout_below="@+id/view"
+            android:layout_alignLeft="@+id/view"
+            android:layout_alignStart="@+id/view"
+            android:layout_alignRight="@+id/view"
+            android:layout_alignEnd="@+id/view" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6"
+        android:paddingTop="@dimen/margin_top_home_image"
+        android:paddingBottom="@dimen/margin_bottom_home_image">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/moodmatcher"
+            android:contentDescription="@string/home_mood_matcher"
+            android:clickable="true"
+            android:onClick="Selector"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"/>
+
+        <View
+            android:layout_width="@dimen/width_divider_home"
+            android:layout_height="@dimen/height_dividers"
+            android:background="@color/black_button"
+            android:layout_margin="@dimen/margin_divider_home"
+            android:layout_centerVertical="true"
+            android:id="@+id/view2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:text="@string/home_mood_matcher"
+            android:textColor="@color/black_button"
+            android:textAllCaps="true"
+            android:gravity="center"
+            android:id="@+id/textMoodMatcher"
+            android:layout_above="@+id/view2"
+            android:layout_alignLeft="@+id/view2"
+            android:layout_alignStart="@+id/view2"
+            android:layout_alignRight="@+id/view2"
+            android:layout_alignEnd="@+id/view2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:text="@string/home_subtitle_mood_matcher"
+            android:id="@+id/textSubtitleMoodMatcher"
+            android:textColor="@color/black_button"
+            android:textAllCaps="true"
+            android:gravity="center"
+            android:textStyle="italic"
+            android:layout_below="@+id/view2"
+            android:layout_alignLeft="@+id/view2"
+            android:layout_alignStart="@+id/view2"
+            android:layout_alignRight="@+id/view2"
+            android:layout_alignEnd="@+id/view2" />
+
+    </RelativeLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6"
+        android:paddingTop="@dimen/margin_top_home_image"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingRight="@dimen/margin_top_home_image"
+            android:paddingEnd="@dimen/margin_top_home_image">
+
+            <ImageView
+                android:id="@+id/imageMyRecipes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/img_myrecipes_home"
+                android:scaleType="centerCrop"
+                android:clickable="true"
+                android:onClick="MyRecipes"
+                android:adjustViewBounds="true"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/backround_protection"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/home_subtitle_myrecipes"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:id="@+id/textSubtitleMyRecipes"
+                android:textColor="@android:color/white"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/space_4dp"
+                android:textAllCaps="true"
+                android:gravity="center"
+                android:textStyle="italic"/>
+
+            <View
+                android:layout_width="@dimen/width_divider_home"
+                android:layout_height="@dimen/height_dividers"
+                android:layout_margin="@dimen/margin_divider_home_below"
+                android:background="@android:color/white"
+                android:id="@+id/view3"
+                android:layout_above="@+id/textSubtitleMyRecipes"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/home_my_recipes"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textColor="@android:color/white"
+                android:textAllCaps="true"
+                android:gravity="center"
+                android:id="@+id/textMyRecipes"
+                android:layout_above="@+id/view3"
+                android:layout_centerHorizontal="true"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingStart="@dimen/margin_top_home_image"
+            android:paddingLeft="@dimen/margin_top_home_image">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:clickable="false"
+                android:onClick="MyRecipes"
+                android:src="@drawable/mymenu"
+                android:adjustViewBounds="true"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/backround_protection"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/home_subtitle_create_gallery"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:id="@+id/textSubtitleCreateGallery"
+                android:textColor="@android:color/white"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/space_4dp"
+                android:textAllCaps="true"
+                android:gravity="center"
+                android:textStyle="italic"/>
+
+            <View
+                android:layout_width="@dimen/width_divider_home"
+                android:layout_height="@dimen/height_dividers"
+                android:layout_margin="@dimen/margin_divider_home_below"
+                android:background="@android:color/white"
+                android:id="@+id/view4"
+                android:layout_above="@+id/textSubtitleCreateGallery"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/home_create_gallery"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textColor="@android:color/white"
+                android:textAllCaps="true"
+                android:gravity="center"
+                android:id="@+id/textDesignSlideShow"
+                android:layout_above="@+id/view4"
+                android:layout_centerHorizontal="true"/>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

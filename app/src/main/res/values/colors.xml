@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#E0E0E0</color>
+    <color name="colorAccent">#FFC573</color>
+    <color name="text_orange_color">#F19960</color>
+    <color name="text_red_color">#E24A40</color>
+    <color name="black_button">#3A3A3A</color>
+    <color name="textTitle">#616161</color>
+    <color name="black_button_pressed">#888888</color>
+    <color name="login_text_background_color">#DAFFFF</color>
+    <color name="login_box_bg_color">#E3E3E3</color>
+    <color name="disabledLoginButton">#BEBEBE</color>
+    <color name="black_light">#545454</color>
+    <color name="alcoholic_drinks">#FFECEF</color>
+    <color name="non_alcoholic_drinks">#DAFFFF</color>
+    <color name="cofees">#FFEDD7</color>
+    <color name="white_transparency">#7FFFFFFF</color>
+    <color name="white_transparency_home">#DFFFFFFF</color>
+    <color name="black_semi_transparent">#6F000000</color>
+    <color name="background_template_two">#4E342E</color>
+    <color name="selection_template_color">#F4A46F</color>
+    <color name="fav_color">#5677FC</color>
+    <color name="semi_transparent_red">#AEE24A40</color>
+    <color name="activatedLoginButton">#135d9d</color>
+    <color name="textHomeColor">#b56daa</color>
 </resources>
