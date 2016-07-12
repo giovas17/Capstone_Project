@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/create_account_linearlayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_horizontal_margin"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="@dimen/login_margin_bottom"
+        android:gravity="center">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="@dimen/height_dividers"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/margin_dividers_login"
+            android:background="@color/black_button"/>
+
+        <TextView
+            android:id="@+id/label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@android:color/white"
+            android:gravity="center"
+            android:padding="@dimen/login_text_padding"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:text="@string/or_create_account"
+            android:textAllCaps="true"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="@dimen/height_dividers"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/margin_dividers_login"
+            android:background="@color/black_button"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/create_account_fields_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/login_box_bg_color"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="@dimen/login_text_padding">
+
+        <EditText
+            android:id="@+id/complete_name"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/account_fields_height"
+            android:layout_marginBottom="@dimen/account_username_margin_bottom"
+            android:background="@drawable/white_edit_text"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:hint="@string/prompt_firstname_lastname"
+            android:inputType="textPersonName"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/account_fields_margin"
+            android:paddingStart="@dimen/account_fields_margin"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/account_fields_height"
+            android:layout_marginBottom="@dimen/account_username_margin_bottom"
+            android:background="@drawable/white_edit_text"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:hint="@string/prompt_account_email"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/account_fields_margin"
+            android:paddingStart="@dimen/account_fields_margin"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/account_fields_height"
+            android:layout_marginBottom="@dimen/account_username_margin_bottom"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:background="@drawable/white_edit_text"
+            android:hint="@string/prompt_user_name"
+            android:inputType="text"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/account_fields_margin"
+            android:paddingStart="@dimen/account_fields_margin"
+            android:singleLine="true" />
+
+        <RelativeLayout
+            android:id="@+id/show_password_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/account_fields_height">
+
+            <EditText
+                android:id="@+id/account_create_password"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/white_edit_text"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:hint="@string/prompt_password"
+                android:maxLines="1"
+                android:paddingLeft="@dimen/account_fields_margin"
+                android:paddingStart="@dimen/account_fields_margin"
+                android:singleLine="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <com.itexico.widgets.CheckBoxImageView xmlns:password="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:padding="@dimen/account_fields_margin"
+                android:src="@drawable/hide_password_icon"
+                password:checked_img="@drawable/hide_password_icon"
+                password:default_img="@drawable/hide_password_icon"
+                android:layout_alignParentEnd="true"
+                android:background="@android:color/transparent"/>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/create_account"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_buttons"
+        android:layout_marginBottom="@dimen/login_margin_bottom"
+        android:layout_marginTop="@dimen/account_username_margin_bottom"
+        android:background="@drawable/button_black"
+        android:enabled="true"
+        android:text="@string/action_account_create"
+        android:textColor="@color/text_orange_color"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginBottom="@dimen/login_margin_bottom"
+        android:background="@color/login_text_background_color"
+        android:padding="@dimen/login_text_padding"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        android:text="@string/login_text" />
+
+</LinearLayout>

@@ -20,6 +20,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.softwaremobility.data.MoninContract;
+import com.softwaremobility.data.MoninDataBase;
+import com.softwaremobility.dialogs.SocialConnect;
+import com.softwaremobility.json.JSONUtils;
 import com.softwaremobility.monin.R;
 import com.softwaremobility.network.Connection;
 import com.softwaremobility.network.NetworkConnection;

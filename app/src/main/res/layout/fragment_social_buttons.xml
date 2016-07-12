@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_bottom_button_social">
+
+        <Button
+            android:id="@+id/facebook_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_black"
+            android:drawableLeft="@drawable/login_facebook_icon"
+            android:drawableStart="@drawable/login_facebook_icon"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingStart="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingEnd="@dimen/activity_horizontal_margin"
+            android:textColor="@android:color/white"
+            android:textAllCaps="true"
+            android:text="@string/social_button_facebook_text"/>
+
+        <com.facebook.login.widget.LoginButton
+            android:id="@+id/facebook_login_button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_buttons"
+            android:visibility="gone"
+            style="?android:textAppearanceSmall"/>
+
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_bottom_button_social">
+
+        <Button
+            android:id="@+id/google_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_black"
+            android:drawableLeft="@drawable/login_googleplus_icon"
+            android:drawableStart="@drawable/login_googleplus_icon"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingStart="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingEnd="@dimen/activity_horizontal_margin"
+            android:textColor="@android:color/white"
+            android:textAllCaps="true"
+            android:text="@string/social_button_google_text"/>
+
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/google_login_button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_buttons"
+            android:visibility="gone"
+            style="?android:textAppearanceSmall"/>
+
+
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/weibo_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top_button_social"
+        android:background="@drawable/button_black"
+        android:drawableLeft="@drawable/login_googleplus_icon"
+        android:drawableStart="@drawable/login_googleplus_icon"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingStart="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingEnd="@dimen/activity_horizontal_margin"
+        android:textColor="@android:color/white"
+        android:textAllCaps="true"
+        android:text="@string/social_button_weibo_text"/>
+
+</LinearLayout>

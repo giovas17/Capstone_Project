@@ -10,7 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="7"
+        android:layout_weight="1"
         android:paddingBottom="@dimen/space_2dp">
 
         <ImageView
@@ -70,14 +70,14 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="6"
+        android:layout_weight="1"
         android:paddingTop="@dimen/margin_top_home_image"
         android:paddingBottom="@dimen/margin_bottom_home_image">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/moodmatcher"
+            android:src="@drawable/img_oficialmonin_home"
             android:contentDescription="@string/home_mood_matcher"
             android:clickable="true"
             android:onClick="Selector"
@@ -125,133 +125,70 @@
 
     </RelativeLayout>
 
-
-
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="6"
+        android:layout_weight="1"
         android:paddingTop="@dimen/margin_top_home_image"
-        android:orientation="horizontal">
+        android:paddingBottom="@dimen/margin_bottom_home_image">
 
-        <RelativeLayout
-            android:layout_width="0dp"
+        <ImageView
+            android:id="@+id/imageSlideMonin"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:paddingRight="@dimen/margin_top_home_image"
-            android:paddingEnd="@dimen/margin_top_home_image">
+            android:src="@drawable/moodmatcher"
+            android:contentDescription="@string/home_officially_monin"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop" />
 
-            <ImageView
-                android:id="@+id/imageMyRecipes"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/img_myrecipes_home"
-                android:scaleType="centerCrop"
-                android:clickable="true"
-                android:onClick="MyRecipes"
-                android:adjustViewBounds="true"/>
+        <View
+            android:layout_width="@dimen/width_divider_home"
+            android:layout_height="@dimen/height_dividers"
+            android:background="@color/black_light"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="@dimen/margin_divider_home"
+            android:layout_centerVertical="true"
+            android:id="@+id/view3" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/backround_protection"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:text="@string/home_officially_monin"
+            android:textAllCaps="true"
+            android:textColor="@color/black_light"
+            android:gravity="center"
+            android:id="@+id/textSlideTitle"
+            android:layout_above="@+id/view3"
+            android:layout_alignLeft="@+id/view3"
+            android:layout_alignStart="@+id/view3"
+            android:layout_alignRight="@+id/view3"
+            android:layout_alignEnd="@+id/view3" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/home_subtitle_myrecipes"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:id="@+id/textSubtitleMyRecipes"
-                android:textColor="@android:color/white"
-                android:layout_centerHorizontal="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="@dimen/space_4dp"
-                android:textAllCaps="true"
-                android:gravity="center"
-                android:textStyle="italic"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:text="@string/home_subtitle_official_monin"
+            android:id="@+id/textView10"
+            android:textAllCaps="true"
+            android:gravity="center"
+            android:textStyle="italic"
+            android:textColor="@color/black_light"
+            android:layout_below="@+id/view3"
+            android:layout_alignLeft="@+id/view3"
+            android:layout_alignStart="@+id/view3"
+            android:layout_alignRight="@+id/view3"
+            android:layout_alignEnd="@+id/view3" />
 
-            <View
-                android:layout_width="@dimen/width_divider_home"
-                android:layout_height="@dimen/height_dividers"
-                android:layout_margin="@dimen/margin_divider_home_below"
-                android:background="@android:color/white"
-                android:id="@+id/view3"
-                android:layout_above="@+id/textSubtitleMyRecipes"
-                android:layout_centerHorizontal="true"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/home_my_recipes"
-                android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                android:textColor="@android:color/white"
-                android:textAllCaps="true"
-                android:gravity="center"
-                android:id="@+id/textMyRecipes"
-                android:layout_above="@+id/view3"
-                android:layout_centerHorizontal="true"/>
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="0dp"
+        <View
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:paddingStart="@dimen/margin_top_home_image"
-            android:paddingLeft="@dimen/margin_top_home_image">
+            android:clickable="true"
+            android:onClick="Selector"
+            android:background="@drawable/backround_protection"/>
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:clickable="false"
-                android:onClick="MyRecipes"
-                android:src="@drawable/mymenu"
-                android:adjustViewBounds="true"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/backround_protection"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/home_subtitle_create_gallery"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:id="@+id/textSubtitleCreateGallery"
-                android:textColor="@android:color/white"
-                android:layout_centerHorizontal="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="@dimen/space_4dp"
-                android:textAllCaps="true"
-                android:gravity="center"
-                android:textStyle="italic"/>
-
-            <View
-                android:layout_width="@dimen/width_divider_home"
-                android:layout_height="@dimen/height_dividers"
-                android:layout_margin="@dimen/margin_divider_home_below"
-                android:background="@android:color/white"
-                android:id="@+id/view4"
-                android:layout_above="@+id/textSubtitleCreateGallery"
-                android:layout_centerHorizontal="true"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/home_create_gallery"
-                android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                android:textColor="@android:color/white"
-                android:textAllCaps="true"
-                android:gravity="center"
-                android:id="@+id/textDesignSlideShow"
-                android:layout_above="@+id/view4"
-                android:layout_centerHorizontal="true"/>
-
-        </RelativeLayout>
-
-
-    </LinearLayout>
+    </RelativeLayout>
 
 </LinearLayout>

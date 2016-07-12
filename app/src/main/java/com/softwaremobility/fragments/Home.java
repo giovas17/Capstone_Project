@@ -16,6 +16,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.softwaremobility.monin.R;
+import com.softwaremobility.preferences.MoninPreferences;
+import com.softwaremobility.utilities.PermissionsMarshmallow;
 
 public class Home extends Fragment implements LocationListener{
 
@@ -33,13 +35,11 @@ public class Home extends Fragment implements LocationListener{
 
         TextView officially = (TextView)view.findViewById(R.id.textOfficiallyTitle);
         TextView moodMatcher = (TextView)view.findViewById(R.id.textMoodMatcher);
-        TextView myRecipes = (TextView)view.findViewById(R.id.textMyRecipes);
-        TextView slideShow = (TextView)view.findViewById(R.id.textDesignSlideShow);
+        TextView myRecipes = (TextView)view.findViewById(R.id.textSlideTitle);
 
         officially.setTypeface(typeface,Typeface.BOLD);
         moodMatcher.setTypeface(typeface,Typeface.BOLD);
         myRecipes.setTypeface(typeface,Typeface.BOLD);
-        slideShow.setTypeface(typeface,Typeface.BOLD);
 
         boolean isGPSAllowed = MoninPreferences.getBoolean(getContext(), MoninPreferences.SHAREDPREFERENCE_KEY.KEY_GPS_ALLOWED);
         if (isGPSAllowed){
@@ -59,7 +59,7 @@ public class Home extends Fragment implements LocationListener{
         if (shouldFinish){
             shouldFinish = false;
             getActivity().finish();
-            Intent intent = new Intent(getContext(), com.itexico.activities.Login.class);
+            Intent intent = new Intent(getContext(), Login.class);
             getContext().startActivity(intent);
         }
     }

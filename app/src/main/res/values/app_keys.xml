@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Keys for Encryption -->
+    <string name="key" translatable="false">dofkrfaosrdedofkrfaosrdedofkrfao</string>
+    <string name="initVector" translatable="false">zxcvbnmdfrasdfgh</string>
+    <string name="AppID" translatable="false">4d53bce03ec34c0a911182d4c228ee6c</string>
+    <string name="AppSecret" translatable="false">A93reRTUJHsCuQSHR+L3GxqOJyDmQpCgps102ciuabc=</string>
+    <string name="separator" translatable="false">:</string>
+
+    <!--Facebook Login app_id and permissions-->
+    <string name="facebook_app_id" translatable="false">1683078451909458</string>
+    <string name="facebook_permission_public_profile" translatable="false">public_profile</string>
+    <string name="facebook_permission_email" translatable="false">email</string>
+
+    <!--Google login client server id -->
+    <string name="server_client_id" translatable="false">521726283871-8tnedofd81qps5q95pvtgtjvtdar529j.apps.googleusercontent.com</string>
+    <string name="server_auth_code" translatable="false">521726283871-dj2vk78gkfgmju6usr58k0neh8eh9mnd.apps.googleusercontent.com</string>
+    <string name="server_client_id_suffix" translatable="false">.apps.googleusercontent.com</string>
+</resources>

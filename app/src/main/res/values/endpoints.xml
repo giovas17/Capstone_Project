@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="base_path_requests" translatable="false">http://monin-dev3.azurewebsites.net</string>
+    <string name="base_path_production" translatable="false">http://moninapi.azurewebsites.net</string>
+    <string name="api_account_register" translatable="false">api/v1/Account/Register</string>
+    <string name="api_login" translatable="false">token</string>
+    <string name="api_external_register" translatable="false">api/v1/Account/RegisterExternalToken</string>
+    <string name="api_forgot_password" translatable="false">api/v1/Account/ForgotPassword</string>
+    <string name="api_monin_recipes" translatable="false">api/v1/moninrecipes</string>
+    <string name="api_mood_matcher" translatable="false">api/v1/moods</string>
+    <string name="api_mood_matcher_search" translatable="false">api/v1/moods/recipes</string>
+    <string name="api_user_recipes_v2" translatable="false">/api/v2/userrecipes</string>
+    <string name="api_user_recipes" translatable="false">/api/v1/userrecipes</string>
+    <string name="api_user_monin_ingredients" translatable="false">/api/v2/userrecipes/moniningredients</string>
+    <string name="api_user_recipes_measure_options" translatable="false">/api/v2/userrecipes/measureoptions</string>
+    <string name="api_community_people" translatable="false">/api/v1/community/people</string>
+    <string name="api_community_profile" translatable="false">/api/v1/community/</string>
+    <string name="api_user_profile" translatable="false">/api/v1/account/userprofile</string>
+    <string name="api_user_to_follow" translatable="false">/api/v1/community/people/following</string>
+    <string name="api_slideshow" translatable="false">/api/v1/slideshow</string>
+    <string name="api_monin_recipes_favorites" translatable="false">/api/v1/favoritemoninrecipes</string>
+    <string name="api_user_recipe_favorites" translatable="false">/api/v1/userrecipes/favorite</string>
+    <string name="api_user_recipes_photo" translatable="false">/api/v1/userrecipes/picture</string>
+    <string name="api_user_change_password" translatable="false">/api/v1/Account/ChangePassword</string>
+    <string name="api_user_change_picture" translatable="false">/api/v1/Account/picture</string>
+    <string name="api_create_slide" translatable="false">/api/v1/slide</string>
+    <string name="api_create_slide_picture" translatable="false">/api/v1/slide/picture</string>
+    <string name="api_glasses" translatable="false">/api/v1/userrecipes/glasses</string>
+    <string name="api_recipes_community" translatable="false">/api/v1/community/recipes</string>
+
+    <!--          Tags for endpoints            -->
+
+    <!-- Tags for SlideShows -->
+    <string name="tag_first_slide" translatable="false">firstSlide</string>
+    <!-- Tags for Change Password -->
+    <string name="tag_id" translatable="false">Id</string>
+    <string name="tag_email" translatable="false">Email</string>
+    <!-- Tags for Change Public -->
+    <string name="tag_is_public" translatable="false">IsPublicProfile</string>
+</resources>

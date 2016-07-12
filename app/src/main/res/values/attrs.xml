@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CheckBoxImageView">
+        <attr name="default_img" format="integer"/>
+        <attr name="checked_img" format="integer"/>
+        <attr name="checked" format="boolean"/>
+    </declare-styleable>
+
+</resources>
