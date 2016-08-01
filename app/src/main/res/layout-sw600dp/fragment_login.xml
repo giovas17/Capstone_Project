@@ -40,10 +40,10 @@
                 android:layout_height="@dimen/account_fields_height"
                 android:layout_marginBottom="@dimen/account_username_margin_bottom"
                 android:background="@drawable/white_edit_text"
-                android:hint="@string/prompt_user_name"
+                android:hint="@string/prompt_user_name_email"
                 android:inputType="textPersonName"
                 android:maxLines="1"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:singleLine="true" />
 
             <EditText
@@ -53,7 +53,7 @@
                 android:background="@drawable/white_edit_text"
                 android:hint="@string/prompt_password"
                 android:layout_marginTop="@dimen/margin_top_edit_text_login"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:maxLines="1"
                 android:singleLine="true"
                 />
@@ -62,34 +62,37 @@
         <Button
             android:id="@+id/login"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/height_buttons"
             android:layout_marginTop="@dimen/margin_top_login_button"
             android:layout_marginBottom="@dimen/login_margin_bottom"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textAllCaps="true"
             android:background="@drawable/button_black"
             android:text="@string/action_login"
-            android:textAllCaps="true"
             android:textColor="@color/text_orange_color"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/create_account"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/height_buttons"
             android:layout_marginBottom="@dimen/login_margin_bottom"
             android:background="@drawable/button_black"
-            android:text="@string/action_account_create"
             android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:text="@string/action_account_create"
             android:textColor="@color/text_orange_color"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/social_connect"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/height_buttons"
             android:layout_marginBottom="@dimen/login_margin_bottom"
             android:background="@drawable/button_black"
             android:text="@string/action_social_connect"
             android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
             android:textColor="@color/text_orange_color"
             android:textStyle="bold" />
 
@@ -104,9 +107,10 @@
             android:gravity="center"
             android:padding="@dimen/login_text_padding"
             android:clickable="true"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
             android:onClick="ForgotPassword"
-            android:text="@string/forgot_password"
-            android:textAllCaps="true"/>
+            android:text="@string/forgot_password" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -129,9 +133,10 @@
                 android:layout_gravity="center"
                 android:background="@android:color/white"
                 android:gravity="center"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
                 android:padding="@dimen/login_text_padding"
-                android:text="@string/or_option_text"
-                android:textAllCaps="true"/>
+                android:text="@string/or_option_text" />
 
             <View
                 android:layout_width="0dp"
@@ -145,10 +150,11 @@
         <Button
             android:id="@+id/noLoginButton"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/height_buttons"
             android:layout_marginBottom="@dimen/login_margin_bottom"
             android:background="@drawable/button_black"
             android:text="@string/action_no_login"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
             android:textAllCaps="true"
             android:textColor="@color/text_orange_color"
             android:textStyle="bold" />
@@ -156,8 +162,3 @@
     </LinearLayout>
 
 </ScrollView>
-
-
-
-
-

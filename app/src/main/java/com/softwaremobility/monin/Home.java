@@ -62,7 +62,7 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Utils.showSimpleMessage(Home.this, "Data", "Region: " + Locale.getDefault().getCountry() +
-                        "\nSprint: 1\nVersion: 5");
+                        "\nSprint: 3\nVersion: 3");
             }
         });
 
@@ -70,8 +70,6 @@ public class Home extends AppCompatActivity {
         title.setVisibility(View.GONE);
 
         setSupportActionBar(toolbar);
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setTitle("");
     }
 
@@ -85,9 +83,13 @@ public class Home extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.action_settings){
-            intent = new Intent(Home.this, Settings.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(intent);
+            if (MoninPreferences.getBoolean(this, MoninPreferences.SHAREDPREFERENCE_KEY.KEY_IS_NO_LOGIN)){
+                Intent intent = new Intent(this, Login.class);
+                startActivity(intent);
+                finish();
+            }else {
+                Utils.logOut(this);
+            }
         }
         return super.onOptionsItemSelected(item);
     }

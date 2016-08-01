@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#FFFFFF</color>
-    <color name="colorPrimaryDark">#E0E0E0</color>
+    <color name="colorPrimaryDark">#d1c4e9</color>
+    <!-- <color name="colorPrimaryDark">#E0E0E0</color> -->
     <color name="colorAccent">#FFC573</color>
     <color name="text_orange_color">#F19960</color>
     <color name="text_red_color">#E24A40</color>
@@ -23,5 +24,5 @@
     <color name="fav_color">#5677FC</color>
     <color name="semi_transparent_red">#AEE24A40</color>
     <color name="activatedLoginButton">#135d9d</color>
-    <color name="textHomeColor">#b56daa</color>
+    <color name="textHomeColor">#5f2869</color>
 </resources>

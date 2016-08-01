@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/regionsSelector"
+    android:padding="@dimen/space_6dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/filter_by_region"
+        android:padding="@dimen/space_3dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:id="@+id/labelSelectCategory"
+        android:gravity="center"
+        android:background="@color/black_light"
+        android:textColor="@android:color/white"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+
+    <View
+        android:layout_width="@dimen/space_2dp"
+        android:layout_height="@dimen/space_13dp"
+        android:id="@+id/divisorRegions"
+        android:layout_below="@+id/labelSelectCategory"
+        android:background="@android:color/black"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/space_13dp"
+        android:layout_marginBottom="@dimen/space_13dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_2dp"
+        android:id="@+id/divisorBelowRegions"
+        android:background="@android:color/black"
+        android:layout_below="@+id/divisorRegions"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:textStyle="bold"
+        android:textColor="@color/black_light"
+        android:gravity="center"
+        android:text="@string/all_recipes"
+        android:clickable="true"
+        android:id="@+id/filterAllRecipes"
+        android:layout_alignBottom="@+id/divisorBelowRegions"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/divisorRegions"
+        android:layout_toStartOf="@+id/divisorRegions"
+        android:layout_below="@+id/labelSelectCategory" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:text="@string/your_region"
+        android:textColor="@color/text_red_color"
+        android:id="@+id/filterYourRegion"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:clickable="true"
+        android:layout_alignBottom="@+id/divisorBelowRegions"
+        android:layout_toRightOf="@+id/divisorRegions"
+        android:layout_toEndOf="@+id/divisorRegions"
+        android:layout_alignRight="@+id/divisorBelowRegions"
+        android:layout_alignEnd="@+id/divisorBelowRegions"
+        android:layout_below="@+id/labelSelectCategory" />
+</RelativeLayout>

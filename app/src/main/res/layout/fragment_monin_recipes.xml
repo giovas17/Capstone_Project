@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@android:color/white"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/searchBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/padding_search_layout_monin_recipes"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/filter_inactive_icon"
+            android:id="@+id/filterSelectorSwitch"
+            android:clickable="true"
+            android:contentDescription="@string/filter_content_description"
+            android:padding="@dimen/padding_image_filter_selector"
+            android:layout_weight="0"/>
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="@dimen/height_edit_text_search"
+            android:hint="@string/search"
+            android:layout_weight="1"
+            android:id="@+id/editTextSearchRecipe"
+            android:background="@drawable/search_gray_textview"
+            android:inputType="text"
+            android:imeOptions="actionSearch"
+            android:textSize="@dimen/text_size_account_creation"
+            android:layout_marginLeft="@dimen/margin_edit_text_search"
+            android:layout_marginRight="@dimen/margin_edit_text_search"
+            android:layout_marginStart="@dimen/margin_edit_text_search"
+            android:layout_marginEnd="@dimen/margin_edit_text_search"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:clickable="true"
+            android:id="@+id/regionselectorSwitch"
+            android:contentDescription="@string/region_content_description"
+            android:padding="@dimen/padding_image_filter_selector"
+            android:src="@drawable/region_inactive_icon"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/container_filters"
+        android:animateLayoutChanges="true">
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/refreshingLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.softwaremobility.utilities.EmptyRecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="@dimen/padding_empty_recycler_view_monin_recipes"
+                android:paddingRight="@dimen/padding_empty_recycler_view_monin_recipes"
+                android:paddingEnd="@dimen/padding_empty_recycler_view_monin_recipes"
+                android:paddingStart="@dimen/padding_empty_recycler_view_monin_recipes"
+                android:background="@android:color/white"
+                android:id="@+id/moninRecipesRecycler">
+
+            </com.softwaremobility.utilities.EmptyRecyclerView>
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+        <LinearLayout
+            android:id="@+id/emptyView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone"
+            android:background="@color/disabledLoginButton">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nodata_available"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"/>
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+
+</LinearLayout>

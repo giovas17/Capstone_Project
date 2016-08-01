@@ -1,0 +1,73 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/filtersSelector"
+    android:padding="@dimen/space_6dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/filter_by_category"
+        android:padding="@dimen/space_3dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:id="@+id/labelFilterByCategory"
+        android:gravity="center"
+        android:background="@color/black_light"
+        android:textColor="@android:color/white"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonsFilterContainer"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_below="@+id/labelFilterByCategory">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/buttonAlcoholic"
+            style="?attr/buttonBarButtonStyle"
+            android:layout_margin="@dimen/space_3dp"
+            android:background="@drawable/alcoholic_drink_button"
+            android:text="@string/alcoholic_drinks"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+            android:textColor="@android:color/black"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/buttonNonAlcoholic"
+            style="?attr/buttonBarButtonStyle"
+            android:layout_margin="@dimen/space_3dp"
+            android:text="@string/non_alcoholic_drinks"
+            android:background="@drawable/non_alcoholic_button"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+            android:textColor="@android:color/black"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/buttonCoffee"
+            style="?attr/buttonBarButtonStyle"
+            android:layout_margin="@dimen/space_3dp"
+            android:background="@drawable/coffe_and_tea_button"
+            android:text="@string/coffe_and_tea"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+            android:textColor="@android:color/black"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_2dp"
+        android:background="@android:color/black"
+        android:layout_below="@+id/buttonsFilterContainer"
+        android:layout_marginTop="@dimen/space_2dp"/>
+</RelativeLayout>

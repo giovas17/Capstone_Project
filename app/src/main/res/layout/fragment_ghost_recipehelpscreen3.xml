@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/fragmentRecipe3"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarGhostDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/white_transparency_home"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <RelativeLayout
+        android:id="@+id/ghostScreenRecipe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/toolbarGhostDetail"
+        android:layout_alignParentStart="true"
+        android:background="@color/white_transparency_home"
+        android:clickable="true">
+
+
+        <RelativeLayout
+            android:id="@+id/searchBar1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="15dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/filter_active_icon"
+                android:id="@+id/filterSelectorSwitch1"
+                android:clickable="true"
+                android:layout_alignParentLeft="true"
+                android:contentDescription="@string/filter_content_description"
+
+                />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/search"
+                android:layout_toRightOf="@+id/filterSelectorSwitch1"
+                android:id="@+id/editTextSearchRecipe1"
+                android:background="@drawable/search_gray_textview"
+                android:inputType="text"
+                android:imeOptions="actionSearch"
+                android:layout_marginLeft="@dimen/space_25dp"
+                android:layout_marginRight="@dimen/space_25dp"
+                android:layout_marginStart="@dimen/space_25dp"
+                android:layout_marginEnd="@dimen/space_25dp"/>
+
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:id="@+id/regionselectorSwitch"
+                android:visibility="invisible"
+                android:contentDescription="@string/region_content_description"
+                android:src="@drawable/region_active_icon"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/space_2dp"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView2"
+                android:src="@drawable/arrow_up2"
+                android:layout_marginTop="@dimen/space_10dp"
+                android:layout_marginRight="@dimen/space_6dp"
+                android:layout_below="@+id/filterSelectorSwitch1"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/recipe_list_ghost_text3"
+                android:textAllCaps="true"
+                android:textColor="@android:color/black"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/space_60dp"
+                android:layout_marginLeft="@dimen/space_6dp"
+                android:id="@+id/textViewCommunity"
+                android:layout_toRightOf="@+id/imageView2"
+                />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
