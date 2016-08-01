@@ -62,7 +62,7 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Utils.showSimpleMessage(Home.this, "Data", "Region: " + Locale.getDefault().getCountry() +
-                        "\nSprint: 12\nVersion: 5");
+                        "\nSprint: 1\nVersion: 5");
             }
         });
 
@@ -92,43 +92,33 @@ public class Home extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void MyRecipes(View view) {
-        boolean isNoLogin = MoninPreferences.getBoolean(this, MoninPreferences.SHAREDPREFERENCE_KEY.KEY_IS_NO_LOGIN);
-        if (isNoLogin){
-            SimpleCustomDialog dialog = new SimpleCustomDialog(this, getString(R.string.error_title_no_login), getString(R.string.error_no_login), new SimpleCustomDialog.okListener() {
-                @Override
-                public void OnOkSelected() {
-                    Intent intent = new Intent(Home.this, Login.class);
-                    startActivity(intent);
-                    finish();
-                }
-
-                @Override
-                public void OnCancelSelected() {
-
-                }
-            });
-            dialog.setOkButtonText(getString(R.string.action_login));
-            dialog.show();
-        }else {
-            if (view.getId() == R.id.imageMyRecipes) {
-                intent = new Intent(this, MoninRecipes.class);
-                intent.putExtra(MoninContract.MoninEntry.Key_IsMoninRecipe, false);
-            } else {
-                intent = new Intent(this, SlideShows.class);
-                intent.putExtra(getString(R.string.slide_show), true);
-            }
-            startActivity(intent);
-        }
-    }
-
     public void Selector(View view) {
         if (view.getId() == R.id.imageOfficialMonin){
             intent = new Intent(this, MoninRecipes.class);
             startActivity(intent);
         }else {
-            intent = new Intent(this, MoodMatcher.class);
-            startActivity(intent);
+            boolean isNoLogin = MoninPreferences.getBoolean(this, MoninPreferences.SHAREDPREFERENCE_KEY.KEY_IS_NO_LOGIN);
+            if (isNoLogin){
+                SimpleCustomDialog dialog = new SimpleCustomDialog(this, getString(R.string.error_title_no_login), getString(R.string.error_no_login), new SimpleCustomDialog.okListener() {
+                    @Override
+                    public void OnOkSelected() {
+                        Intent intent = new Intent(Home.this, Login.class);
+                        startActivity(intent);
+                        finish();
+                    }
+
+                    @Override
+                    public void OnCancelSelected() {
+
+                    }
+                });
+                dialog.setOkButtonText(getString(R.string.action_login));
+                dialog.show();
+            }else {
+                intent = new Intent(this, MoninRecipes.class);
+                intent.putExtra(MoninContract.MoninEntry.Key_IsMoninRecipe, false);
+                startActivity(intent);
+            }
         }
     }
 }

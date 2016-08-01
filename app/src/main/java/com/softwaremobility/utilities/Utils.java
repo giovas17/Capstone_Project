@@ -16,10 +16,18 @@ import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.webkit.DownloadListener;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.target.Target;
+import com.softwaremobility.data.MoninContract;
+import com.softwaremobility.data.MoninDataBase;
 import com.softwaremobility.fragments.Login;
+import com.softwaremobility.listeners.DownloadImageListener;
+import com.softwaremobility.listeners.DownloadListener;
 import com.softwaremobility.monin.R;
+import com.softwaremobility.objects.Recipe;
 import com.softwaremobility.preferences.MoninPreferences;
 
 import java.io.ByteArrayOutputStream;
@@ -169,149 +177,6 @@ public class Utils {
         }
     }
 
-    /**
-     * This method will store the initial recipe without images, but triggered download images
-     * @param people object that will be store in database
-     */
-    private static void prepareDataForStore(final People people, final Context context, final int current, final String term){
-        final String TAG = "DownloadManagerMonin";
-        ContentValues contentValues;
-        final DownloadImageListener listener = new DownloadImageListener() {
-            @Override
-            public void onSuccessfullyDownloadImage(@Nullable final byte[] imageRecipe) {
-                if (people.getPhotoURL() != null && !people.getPhotoURL().equalsIgnoreCase("null")) {
-                    Glide.with(context).load(people.getPhotoURL())
-                            .asBitmap()
-                            .into(new SimpleTarget<Bitmap>(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL) {
-                                @Override
-                                public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
-                                    ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                                    resource.compress(Bitmap.CompressFormat.JPEG,50,stream);
-                                    byte[] array = stream.toByteArray();
-                                    //Log.d(TAG, "onSuccessFullyDownloadImage downloading flag image, Recipe: " + recipe.getDescription());
-                                    onSuccessfullyDownloadAllImages(imageRecipe, array);
-                                }
-                            });
-                }else {
-                    onSuccessfullyDownloadAllImages(imageRecipe,null);
-                    //Log.d(TAG, "onSuccessFullyDownloadAllImages storing data recipe no flag found Recipe: " + recipe.getDescription());
-                }
-            }
-
-            @Override
-            public void onSuccessfullyDownloadAllImages(@Nullable byte[] imagePerson, @Nullable byte[] imageFlag) {
-                storePersonInDataBase(people, imagePerson, current, context, term);
-                Log.d(TAG, "onSuccessFullyDownloadAllImages storing data person, Person: " + people.getName());
-            }
-        };
-        if (people.getPhotoURL() != null && !people.getPhotoURL().equalsIgnoreCase("null")) {
-            Glide.with(context).load(people.getPhotoURL())
-                    .asBitmap()
-                    .into(new SimpleTarget<Bitmap>(com.bumptech.glide.request.target.Target.SIZE_ORIGINAL, com.bumptech.glide.request.target.Target.SIZE_ORIGINAL) {
-                        @Override
-                        public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
-                            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                            resource.compress(Bitmap.CompressFormat.JPEG, 50, stream);
-                            byte[] array = stream.toByteArray();
-                            listener.onSuccessfullyDownloadImage(array);
-                        }
-                    });
-        }else {
-            Log.d(TAG, "onSuccessFullyDownloadAllImages storing data recipe no flag and no image person found, Person: " + people.getName());
-            storePersonInDataBase(people, null, current, context, term);
-        }
-    }
-
-    /**
-     * This method will store the initial recipe without images, but triggered download images
-     * @param slideShow object that will be store in database
-     */
-    private static void prepareDataForStore(final SlideShow slideShow, final Context context, final int current, final String term){
-        final String TAG = "DownloadManagerMonin";
-        ContentValues contentValues;
-        final DownloadImageListener listener = new DownloadImageListener() {
-            @Override
-            public void onSuccessfullyDownloadImage(@Nullable final byte[] imageRecipe) {
-                if (slideShow.getPhotoPath() != null && !slideShow.getPhotoPath().equalsIgnoreCase("null")) {
-                    Glide.with(context).load(slideShow.getPhotoPath())
-                            .asBitmap()
-                            .into(new SimpleTarget<Bitmap>(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL) {
-                                @Override
-                                public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
-                                    ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                                    resource.compress(Bitmap.CompressFormat.JPEG,50,stream);
-                                    byte[] array = stream.toByteArray();
-                                    //Log.d(TAG, "onSuccessFullyDownloadImage downloading flag image, Recipe: " + recipe.getDescription());
-                                    onSuccessfullyDownloadAllImages(imageRecipe, array);
-                                }
-                            });
-                }else {
-                    onSuccessfullyDownloadAllImages(imageRecipe,null);
-                    //Log.d(TAG, "onSuccessFullyDownloadAllImages storing data recipe no flag found Recipe: " + recipe.getDescription());
-                }
-            }
-
-            @Override
-            public void onSuccessfullyDownloadAllImages(@Nullable byte[] imagePerson, @Nullable byte[] imageFlag) {
-                storeSlideShowInDataBase(slideShow, imagePerson, current, context, term);
-                Log.d(TAG, "onSuccessFullyDownloadAllImages storing slideshow, SlideShow: " + slideShow.getTitle());
-            }
-        };
-        if (slideShow.getPhotoPath() != null && !slideShow.getPhotoPath().equalsIgnoreCase("null") && !slideShow.getPhotoPath().equalsIgnoreCase("")) {
-            Glide.with(context).load(slideShow.getPhotoPath())
-                    .asBitmap()
-                    .into(new SimpleTarget<Bitmap>(com.bumptech.glide.request.target.Target.SIZE_ORIGINAL, com.bumptech.glide.request.target.Target.SIZE_ORIGINAL) {
-                        @Override
-                        public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
-                            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                            resource.compress(Bitmap.CompressFormat.JPEG, 50, stream);
-                            byte[] array = stream.toByteArray();
-                            listener.onSuccessfullyDownloadImage(array);
-                        }
-                    });
-        }else {
-            Log.d(TAG, "onSuccessFullyDownloadAllImages storing data recipe no flag and no image person found, SlideShow: " + slideShow.getTitle());
-            storeSlideShowInDataBase(slideShow, null, current, context, term);
-        }
-    }
-
-    private static void storeSlideShowInDataBase(SlideShow slideShow, @Nullable byte[] bytes, int current, Context context, String term) {
-        ContentValues registro = new ContentValues();
-        registro.put(MoninContract.GalleryEntry.Key_Id, String.valueOf(slideShow.getId()));
-        registro.put(MoninContract.GalleryEntry.Key_Title, slideShow.getTitle());
-        registro.put(MoninContract.GalleryEntry.Key_Description, slideShow.getDescription());
-        registro.put(MoninContract.GalleryEntry.Key_Photo, bytes);
-        registro.put(MoninContract.GalleryEntry.Key_CreatedTime, slideShow.getDateCreated());
-        registro.put(MoninContract.GalleryEntry.Key_TemplateId, slideShow.getTemplateId());
-        registro.put(MoninContract.GalleryEntry.Key_Active, slideShow.isActive() ? MoninDataBase.BOOLEAN.TRUE.value : MoninDataBase.BOOLEAN.FALSE.value);
-        Uri uri = MoninContract.GalleryEntry.buildGalleryUriWithSearch(term);
-        context.getContentResolver().insert(uri, registro);
-        context.getContentResolver().notifyChange(uri, null);
-        currentDownloads++;
-        if (currentDownloads == totalDownloads){
-            listener.OnLoadingFinished();
-        }
-    }
-
-    private static void storePersonInDataBase(People people, @Nullable byte[] imagePerson, int current, Context context, String term) {
-        ContentValues registro = new ContentValues();
-        registro.put(MoninContract.PeopleEntry.Key_Id, people.getId());
-        registro.put(MoninContract.PeopleEntry.Key_Name, people.getName());
-        registro.put(MoninContract.PeopleEntry.Key_FavoritesCount, people.getFavoritesCount());
-        registro.put(MoninContract.PeopleEntry.Key_FollowersCount, people.getFollowerCount());
-        registro.put(MoninContract.PeopleEntry.Key_FollowingCount, people.getFollowingCount());
-        registro.put(MoninContract.PeopleEntry.Key_RecipesCount, people.getRecipesCount());
-        registro.put(MoninContract.PeopleEntry.Key_PersonalStatement, people.getPersonalStatement());
-        registro.put(MoninContract.PeopleEntry.Key_Photo, imagePerson);
-        registro.put(MoninContract.PeopleEntry.Key_FollowByMe, people.isFollowedByMe() ? MoninDataBase.BOOLEAN.TRUE.value : MoninDataBase.BOOLEAN.FALSE.value);
-        Uri uri = MoninContract.PeopleEntry.buildPeopleUriWithRegion(term);
-        context.getContentResolver().insert(uri, registro);
-        context.getContentResolver().notifyChange(uri, null);
-        currentDownloads++;
-        if (currentDownloads == totalDownloads){
-            listener.OnLoadingFinished();
-        }
-    }
 
     /**
      * This method stores the data in the dataBase
@@ -375,38 +240,6 @@ public class Utils {
         MoninPreferences.setInteger(context, isMonin ?
                 MoninPreferences.SHAREDPREFERENCE_KEY.KEY_CURRENT_PAGE_MONIN :
                 MoninPreferences.SHAREDPREFERENCE_KEY.KEY_CURRENT_PAGE_USER_RECIPES, current);
-    }
-
-    public static void storePeopleAndRefreshLoader(final List<People> peopleList, final Context context,
-                                                    final Uri uri, final int current, DownloadListener downloadListener){
-
-        listener = downloadListener;
-        String term = uri.getQueryParameter(MoninContract.MoninEntry.Key_SearchTerm);
-        currentDownloads = 0;
-        totalDownloads = peopleList.size();
-        for (People people : peopleList){
-            prepareDataForStore(people,context,current,term);
-        }
-        if (totalDownloads == 0){
-            listener.OnLoadingFinished();
-        }
-        MoninPreferences.setInteger(context, MoninPreferences.SHAREDPREFERENCE_KEY.KEY_CURRENT_PAGE_COMMUNITY, current);
-    }
-
-    public static void storeSlideShowsAndRefreshLoader(final List<SlideShow> slideShowList, final Context context,
-                                                       final Uri uri, final int current, DownloadListener downloadListener){
-
-        listener = downloadListener;
-        String term = uri.getQueryParameter(MoninContract.MoninEntry.Key_SearchTerm);
-        currentDownloads = 0;
-        totalDownloads = slideShowList.size();
-        for (SlideShow slideShow : slideShowList){
-            prepareDataForStore(slideShow,context,current,term);
-        }
-        if (totalDownloads == 0){
-            listener.OnLoadingFinished();
-        }
-        MoninPreferences.setInteger(context, MoninPreferences.SHAREDPREFERENCE_KEY.KEY_CURRENT_PAGE_COMMUNITY, current);
     }
 
     public static boolean convertStringToBoolean(String value){

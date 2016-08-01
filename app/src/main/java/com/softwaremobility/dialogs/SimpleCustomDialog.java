@@ -25,7 +25,11 @@ public class SimpleCustomDialog extends Dialog {
         TextView titleLabel = (TextView) findViewById(R.id.textView7);
         TextView messageLabel = (TextView) findViewById(R.id.messageDialog);
 
-        titleLabel.setText(Title);
+        if (Title != null && Title.length() > 0) {
+            titleLabel.setText(Title);
+        }else {
+            titleLabel.setVisibility(View.GONE);
+        }
         messageLabel.setText(message);
         okButton = (Button) findViewById(R.id.okDialog);
         cancelButton = (Button) findViewById(R.id.cancelDialog);
@@ -34,6 +38,7 @@ public class SimpleCustomDialog extends Dialog {
             @Override
             public void onClick(View v) {
                 listener.OnOkSelected();
+                dismiss();
             }
         });
         cancelButton.setOnClickListener(new View.OnClickListener() {
@@ -56,5 +61,10 @@ public class SimpleCustomDialog extends Dialog {
 
     public void hideCancelButton(){
         cancelButton.setVisibility(View.GONE);
+    }
+
+    public void setYesNoButtons(){
+        okButton.setText(getContext().getString(R.string.yes));
+        cancelButton.setText(getContext().getString(R.string.no));
     }
 }

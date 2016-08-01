@@ -8,7 +8,7 @@ import android.support.annotation.Nullable;
 
 public class MoninContract {
 
-    public static final String CONTENT_AUTHORITY = "com.itexico.monin.app";
+    public static final String CONTENT_AUTHORITY = "com.softwaremobility.monin";
     public static final Uri BASE_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
 
     // Possible paths

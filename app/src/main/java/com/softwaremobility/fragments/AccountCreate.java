@@ -15,7 +15,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.softwaremobility.json.JSONUtils;
-import com.softwaremobility.monin.R;
+import com.softwaremobility.monin.*;
 import com.softwaremobility.network.Connection;
 import com.softwaremobility.network.NetworkConnection;
 import com.softwaremobility.objects.CheckBoxImageView;
@@ -112,7 +112,7 @@ public class AccountCreate extends Fragment implements View.OnClickListener, Net
                 Log.i(LOG_TAG, "onSuccessfullyResponse:" + response);
                 try {
                     JSONUtils.with(getActivity()).updateToken(new JSONObject(response),getString(R.string.value_monin));
-                    Intent intent = new Intent(getActivity(), Home.class);
+                    Intent intent = new Intent(getActivity(), com.softwaremobility.monin.Home.class);
                     startActivity(intent);
                     getActivity().finish();
                 } catch (JSONException e) {

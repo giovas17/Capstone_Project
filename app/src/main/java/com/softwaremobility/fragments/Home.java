@@ -35,11 +35,9 @@ public class Home extends Fragment implements LocationListener{
 
         TextView officially = (TextView)view.findViewById(R.id.textOfficiallyTitle);
         TextView moodMatcher = (TextView)view.findViewById(R.id.textMoodMatcher);
-        TextView myRecipes = (TextView)view.findViewById(R.id.textSlideTitle);
 
         officially.setTypeface(typeface,Typeface.BOLD);
         moodMatcher.setTypeface(typeface,Typeface.BOLD);
-        myRecipes.setTypeface(typeface,Typeface.BOLD);
 
         boolean isGPSAllowed = MoninPreferences.getBoolean(getContext(), MoninPreferences.SHAREDPREFERENCE_KEY.KEY_GPS_ALLOWED);
         if (isGPSAllowed){

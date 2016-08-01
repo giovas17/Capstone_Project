@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_field_required">This field is required</string>
+    <string name="error_no_listener">No listener for the request.</string>
+    <string name="error_message_empty_moodmatcher">You should select at least one mood</string>
+    <string name="error_six_digits">it must have at least 6 digits</string>
+    <string name="error_invalid_email">Invalid email</string>
+    <string name="bad_credentials">Bad Credentials</string>
+    <string name="bad_credentials_message">The username or password is wrong</string>
+    <string name="error">Error</string>
+    <string name="error_title_no_internet">Connectivity Issue</string>
+    <string name="error_no_internet">No internet connection</string>
+    <string name="error_nodetail">No connection available and no recipe stored in the device</string>
+    <string name="error_no_recipes">No recipes found with your current search criteria</string>
+    <string name="error_name_required">You must enter a name of recipe first</string>
+    <string name="error_profile">Something was wrong, try later.</string>
+    <string name="error_directions_required">You must add at least one direction before to continue</string>
+    <string name="error_ingredients_required">You must add at least one ingredient before to continue</string>
+    <string name="error_monin_ingredients_required">You must add at least one monin ingredient before to continue</string>
+    <string name="error_photo_required">You should add or take a picture before to continue</string>
+    <string name="error_no_slide_deletion">You cannot delete this Slide because is the only one that left. If you don\'t want to continue with slideshow creation press back button.</string>
+</resources>

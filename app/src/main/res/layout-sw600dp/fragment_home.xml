@@ -37,7 +37,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
             android:text="@string/home_officially_monin"
             android:textAllCaps="true"
             android:textColor="@color/textHomeColor"
@@ -95,7 +95,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
             android:text="@string/home_mood_matcher"
             android:textColor="@color/black_button"
             android:textAllCaps="true"

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/height_item_list"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@android:color/white"
+    app:cardUseCompatPadding="true"
+    android:foreground="?attr/selectableItemBackground"
+    android:clickable="true"
+    app:cardElevation="@dimen/cardElevation">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:id="@+id/parent_item"
+        android:baselineAligned="false">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:contentDescription="@string/image_item_content_description"
+                android:id="@+id/imageItemList"
+                android:transitionName="@string/transition_tag_image"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/badgeMoninList"
+                android:contentDescription="@string/monin_badge_content_description"
+                android:src="@drawable/monin_badge_icon"
+                android:background="@android:color/white"
+                android:layout_alignParentBottom="true"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="7"
+            android:id="@+id/containerInfoList"
+            android:background="@color/colorAccent">
+
+            <View
+                android:layout_width="@dimen/width_divider_home"
+                android:layout_height="@dimen/height_dividers"
+                android:background="@color/black_light"
+                android:id="@+id/dividerItem"
+                android:layout_marginTop="@dimen/margin_top_divider_list_item"
+                android:layout_marginBottom="@dimen/margin_bottom_divider_list_item"
+                android:layout_centerInParent="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/defaultTextItemList"
+                android:maxWidth="@dimen/max_width_list_item_text"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textAllCaps="true"
+                android:gravity="center"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:id="@+id/infoRecipeTextItemList"
+                android:layout_above="@+id/dividerItem"
+                android:layout_centerHorizontal="true"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/flagItemListRecipe"
+                android:src="@mipmap/ic_launcher"
+                android:visibility="gone"
+                android:contentDescription="@string/flag_content_description"
+                android:layout_below="@+id/dividerItem"
+                android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:padding="@dimen/padding_favorites_list_item"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="@color/disabledLoginButton">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/star_icon"
+                android:id="@+id/ratingStarItemList"
+                android:layout_margin="@dimen/margin_image_favorites_star_list_item"
+                android:contentDescription="@string/star_content_description" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/default_rating_value"
+                android:id="@+id/ratingStarTextItemList"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:maxLines="1"
+                android:ellipsize="end"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</android.support.v7.widget.CardView>

@@ -31,15 +31,14 @@ import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.itexico.activities.*;
-import com.itexico.network.Connection;
-import com.itexico.network.NetworkConnection;
-import com.itexico.utilities.AppConstants;
 import com.sina.weibo.sdk.auth.AuthInfo;
 import com.sina.weibo.sdk.auth.Oauth2AccessToken;
 import com.sina.weibo.sdk.auth.WeiboAuthListener;
 import com.sina.weibo.sdk.auth.sso.SsoHandler;
 import com.sina.weibo.sdk.exception.WeiboException;
+import com.softwaremobility.monin.R;
+import com.softwaremobility.network.Connection;
+import com.softwaremobility.network.NetworkConnection;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -153,7 +152,7 @@ public class Social_Connect_Buttons extends Fragment implements FacebookCallback
 
     @Override
     public void onError(FacebookException error) {
-        mISocialLoginListener.onLoginError(AppConstants.ERR_CODE, error.getMessage());
+        mISocialLoginListener.onLoginError(105, error.getMessage());
     }
 
     @Override
@@ -266,7 +265,7 @@ public class Social_Connect_Buttons extends Fragment implements FacebookCallback
     @Override
     public void onConnectionFailed(ConnectionResult connectionResult) {
         Log.e(TAG, "onConnectionFailed" + connectionResult.getErrorMessage());
-        mISocialLoginListener.onLoginError(AppConstants.ERR_CODE, getString(R.string.connection_failed));
+        mISocialLoginListener.onLoginError(105, getString(R.string.connection_failed));
     }
 
     private void initGoogleSignInOptions() {

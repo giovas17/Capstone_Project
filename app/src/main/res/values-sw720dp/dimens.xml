@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_horizontal_margin">32dp</dimen>
+    <dimen name="space_logo_top_walkthrough">180dp</dimen>
+    <dimen name="space_logo_bottom_walkthrough">150dp</dimen>
+    <dimen name="height_image_logo">210dp</dimen>
+    <dimen name="margin_top_header_privacy_policy">12dp</dimen>
+</resources>

@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:gio="http://schemas.android.com/tools">
-    <string name="app_name">Monin</string>
 
     <!--Login -->
-    <string name="login_text">A world of beverage innovation awaits. To explore hundreds of beverages and start your own library of recipes, please connect below.</string>
+    <string name="login_text">"Un mundo de innovación de bebidas lo espera.  Para explorar cientos de bebidas y crear su propia biblioteca de recetas, conéctese en la parte inferior."</string>
     <string name="prompt_user_name">Ingresa tu nombre de Usuario.</string>
     <string name="prompt_password">Ingresa tu Contraseña.</string>
-    <string name="action_login">Entrar</string>
-    <string name="action_account_create">Crear una Cuenta</string>
-    <string name="action_social_connect">Entrar con Redes Sociales</string>
-    <string name="or_option_text">-- O --</string>
+    <string name="action_login">Iniciar Sesión</string>
+    <string name="action_account_create">Crear Cuenta</string>
+    <string name="action_social_connect">Iniciar Sesión con Social Media</string>
     <string name="forgot_password">¿Olvidáste tu Contraseña?</string>
 
     <string name="error_field_required">Este campo es requerido</string>
@@ -18,279 +16,240 @@
     <string name="login_progress">Procesando Credenciales…</string>
     <string name="password_change_progress">Procesando cambio de Contraseña…</string>
     <string name="update_profile_progress">Actualizando Cuenta…</string>
-    <string name="please_wait">Por favor espere.</string>
+    <string name="please_wait">Espere…</string>
 
     <!-- Network Layer strings -->
-    <string name="error_no_listener">No listener for the request.</string>
 
-    <string name="link_account_facebook">Ligar con Facebook</string>
-    <string name="link_account_google">Ligar con Google+</string>
-    <string name="or_create_account">O</string>
+    <string name="or_create_account">O Crear una Cuenta</string>
     <string name="prompt_firstname_lastname">Nombre y Apellido</string>
     <string name="prompt_account_email">Ingrese su correo electrónico.</string>
 
 
-    <string name="message_page1_walkthrough">Explore, create and share 100\'s of recommended recipes and see what others in your área (and around the world) are creating at their bar. This and so much more awaits!</string>
+    <string name="message_page1_walkthrough">Explore, cree y comparta cientos de recetas deliciosas y modernas y vea lo que otras personas cerca a usted (y en el mundo) están creando en sus establecimientos. ¡Esto y mucho más lo espera!</string>
     <string name="privacy_policy">Lorem ipsum dolor sit amet, consectetur adipsicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam</string>
     <string name="allow">Permitir</string>
-    <string name="dialog_geolocation">Allow \"Monin\" to use your geolocation?</string>
-    <string name="cancel">Cancel</string>
-    <string name="welcome_monin">Welcome to the World of MONIN</string>
-    <string name="but_first">But first…</string>
-    <string name="age_confirmation">Por favor confirme que es mayor de 21 años de edad y que esta de acuerdo con la política de privacidad. \nGracias! </string>
-    <string name="check_walkthrough_text">Yes, I am 21 years old</string>
-    <string name="agree_privacy_policy_text">Estoy de Acuerdo con la política de privacidad</string>
-    <string name="home_is_where_you_are">Home is where you are</string>
-    <string name="text_gps_walkthrough">For that reason we need to know where you are so we can tailor this app experience especially for you</string>
+    <string name="dialog_geolocation">¿Permitir \"Monin\" usar tu geolocalización?</string>
+    <string name="cancel">Cancelar</string>
+    <string name="welcome_monin">Bienvenido al mundo de MONIN</string>
+    <string name="but_first">Pero primero…</string>
+    <string name="age_confirmation">Por favor confirme que es mayor de 21 años de edad y que esta de acuerdo con la politica de privacidad. \nGracias! </string>
+    <string name="check_walkthrough_text">Sí, tengo 21 años.</string>
+    <string name="agree_privacy_policy_text">ACEPTO LA POLÍTICA DE PRIVACIDAD</string>
+    <string name="home_is_where_you_are">Su hogar es donde está usted</string>
+    <string name="text_gps_walkthrough">Por esa razón necesitamos saber dónde se encuentra para que podamos construir esta experiencia de aplicación especialmente para usted.</string>
     <string name="allow_geolocation">Permitir Geolocalización</string>
-    <string name="titte_login">Login</string>
-    <string name="value_facebook">Facebook</string>
+    <string name="titte_login">Iniciar Sesión</string>
 
-    <string name="community_ghost_text">be part\nof the community</string>
-    <string name="recipe_ghost_text">toggle between\nnumber of servings\n &amp; unit system</string>
-    <string name="recipe_list_ghost_text">toggle between\ngrid &amp; list views</string>
-    <string name="recipe_list_ghost_text2">filter by\nregion</string>
-    <string name="recipe_list_ghost_text3">filter by\ncategory</string>
+    <string name="community_ghost_text">se parte\nde la comunidad</string>
+    <string name="recipe_ghost_text"><![CDATA[cambiar entre\nnúmero de preparados\n & Sistema de Unidades]]></string>
+    <string name="recipe_list_ghost_text"><![CDATA[cambiar entre\nvista cuadricula & lista]]></string>
+    <string name="recipe_list_ghost_text2">filtrar por\nregión</string>
+    <string name="recipe_list_ghost_text3">filtrar por\ncategoria</string>
 
-    <string name="got_it"><u>got it</u></string>
+    <string name="got_it"><u>lo tengo</u></string>
     <string name="Next_tip"><u>siguiente tip</u></string>
-    <string name="skip_tip"><u>skip tutorial</u></string>
-    <string name="value_google">Google</string>
-    <string name="social_button_google_text">Ligar cuenta a Google+</string>
-    <string name="social_button_facebook_text">Ligar cuenta a Facebook</string>
-    <string name="value_monin">Monin</string>
-    <string name="titte_login_social">Login with Social</string>
-    <string name="bad_credentials">Bad Credentials</string>
-    <string name="bad_credentials_message">The username or password is wrong</string>
-    <string name="error_message_empty_moodmatcher">You should select at least one mood</string>
-    <string name="error_six_digits">it must have at least 6 digits</string>
-    <string name="tittle_account_creation">Account Creation</string>
+    <string name="skip_tip"><u>Saltar tutorial</u></string>
+    <string name="social_button_google_text">VINCULAR CUENTA A GOOGLE+</string>
+    <string name="social_button_facebook_text">VINCULAR CUENTA A FACEBOOK</string>
+    <string name="bad_credentials">Credenciales Erroneas</string>
+    <string name="bad_credentials_message">El nombre de usuario o contraseña es incorrecto</string>
+    <string name="error_message_empty_moodmatcher">Debes seleccionar al menos un estado de animo antes de poder continuar</string>
+    <string name="error_six_digits">Trata de nuevo amigo!, tu contraseña debe de tener al menos 6 o mas carácteres.</string>
+    <string name="tittle_account_creation">Creación de Cuenta</string>
     <string name="ok">OK</string>
-    <string name="error_invalid_email">Invalid email</string>
-    <string name="confirmation">Confirmation</string>
-    <string name="message_confirmation_logout">Do you really want to logout?</string>
-    <string name="forgot_password_success_message">Please check your email and click reset password link.</string>
-    <string name="forgot_password_error_message">No account was found with that email</string>
-    <string name="password_long_error_message">The new password must be at least 6 characters long.</string>
-    <string name="password_confirm_error_message">New password does not match the confirm password.</string>
+    <string name="error_invalid_email">Ingrese un correo electrónico válido</string>
+    <string name="confirmation">Confirmación</string>
+    <string name="message_confirmation_logout">¿Realmente quieres cerrar sesión?</string>
+    <string name="forgot_password_success_message">Verifique su correo electrónico y dé clic en el botón para configurar una nueva contraseña.</string>
+    <string name="forgot_password_error_message">No se encontró el correo electrónico</string>
+    <string name="password_confirm_error_message">La nueva contraseña no coincide con la confirmación</string>
     <string name="error">Error</string>
-    <string name="skip">Skip</string>
-    <string name="image_item_content_description">Image for the Recipe</string>
-    <string name="monin_badge_content_description">recipe from monin</string>
-    <string name="defaultTextItemList">Name Recipe</string>
-    <string name="flag_content_description">Flag of the origin for the recipe</string>
-    <string name="star_content_description">Rating for recipes</string>
-    <string name="header_authorization">Authorization</string>
-    <string name="monin_recipes">Monin Recipes</string>
-    <string name="detail_recipe">Detail Recipe</string>
-    <string name="type_list">list_type</string>
-    <string name="search">Search</string>
-    <string name="filter_content_description">Filters switch option</string>
-    <string name="region_content_description">Filter by region switch option</string>
-    <string name="select_category">Select a Category</string>
+    <string name="skip">Saltar</string>
+    <string name="monin_recipes">Recetas Monin</string>
+    <string name="detail_recipe">Detalle de Receta</string>
+    <string name="search">Busqueda</string>
+    <string name="select_category">Seleccionar una Categoría</string>
     <string name="all_recipes">Todas las Recetas</string>
-    <string name="your_region">Your Region</string>
-    <string name="alcoholic_drinks">Bebidas\nAlcoholicas</string>
-    <string name="filter_by_category">Filter By Category</string>
-    <string name="non_alcoholic_drinks">Non Alcoholic\nDrinks</string>
-    <string name="coffe_and_tea">Coffee\nand Tea</string>
-    <string name="loading">Loading…</string>
-    <string name="error_no_internet">No internet connection</string>
-    <string name="favorite_content_description_detail">Favorite button to mark the recipe as favorite</string>
-    <string name="share_action_content_description">Share button that makes the app share the description and picture</string>
-    <string name="servings_size">- Servings Size <gio:g serving="size">%1$1d</gio:g> oz.</string>
-    <string name="servings"><gio:g serving="size">%1$1d</gio:g> Servings</string>
-    <string name="glass_type">Glass Type: <gio:g value="type">%1$1s</gio:g></string>
-    <string name="ingredients">Ingredients</string>
-    <string name="instructions">Directions</string>
-    <string name="servings_button"><gio:g num="servings">%1$1d</gio:g> Servings</string>
-    <string name="servings_button_Help"><gio:g num="servings">2</gio:g> Servings</string>
-    <string name="servings_size_text">- Serving Size for <gio:g serving_size="size">%1$1d</gio:g> oz.</string>
-    <string name="error_nodetail">No connection available and no recipe stored in the device</string>
-    <string name="error_no_recipes">No recipes found with your current search criteria</string>
-    <string name="mood_matcher_question">What are you in the mood for today?</string>
-    <string name="lets_see"><![CDATA[Lets see what you got! >]]></string>
-    <string name="mood_matcher">Mood Matcher</string>
-    <string name="create_recipe">Create a new Recipe</string>
-    <string name="user_recipes">User Recipes</string>
-    <string name="recipe_creation">Recipe Creation</string>
-    <string name="community_ghost_detaiL2">difficulty for \n preparation</string>
+    <string name="your_region">Tu Región</string>
+    <string name="alcoholic_drinks">Cócteles </string>
+    <string name="filter_by_category">Filtro por Categoría</string>
+    <string name="non_alcoholic_drinks"> Cócteles\nsin Alcohol</string>
+    <string name="coffe_and_tea">Café y\nté caliente</string>
+    <string name="loading">Cargando…</string>
+    <string name="error_no_internet">No hay conexión a Internet</string>
+    <string name="glass_type">Tipo de Vaso: <gio:g value="type">%1$1s</gio:g></string>
+    <string name="ingredients">Ingredientes</string>
+    <string name="instructions">Instrucciones</string>
+    <string name="error_nodetail">No hay conexion disponible o la receta no se encuentra guardada en este dispositivo.</string>
+    <string name="error_no_recipes">Disculpe. No existe ninguna Receta con ese nombre</string>
+    <string name="mood_matcher_question">¿Qué se le antoja el día de hoy?</string>
+    <string name="lets_see"><![CDATA[¡Ver mis Coincidencias!]]></string>
+    <string name="mood_matcher">Buscador de humor</string>
+    <string name="create_recipe">Crear una nueva Receta</string>
+    <string name="user_recipes">Mis Recetas</string>
+    <string name="recipe_creation">Creación de Receta</string>
+    <string name="community_ghost_detaiL2">Nivel de dificultad\n¿cuán fácil de preparar es este trago?</string>
 
-    <string name="home_officially_monin">Monin\nOficial</string>
-    <string name="home_subtitle_official_monin">Una Libreria llena de\nnuestras mejores recetas</string>
+    <string name="home_officially_monin">Monin\nOficialmente</string>
+    <string name="home_subtitle_official_monin">Una Biblioteca llena de\nnuestras mejores recetas</string>
     <string name="home_mood_matcher">Búsqueda por\nEstado de Anímo</string>
-    <string name="home_subtitle_mood_matcher">Una Bebida\npara cada ocación</string>
-    <string name="home_subtitle_myrecipes">Crea y comparte\ntus recetas</string>
+    <string name="home_subtitle_mood_matcher">Una Trago\npara cada ocación</string>
+    <string name="home_subtitle_myrecipes">Crear y compartir\ntus recetas</string>
     <string name="home_my_recipes">Mis\nRecetas</string>
-    <string name="home_subtitle_create_gallery">Un rápido y sencillo\nD.I.Y. Ménu Digital</string>
-    <string name="home_create_gallery">Diseñar\nuna Presentación</string>
-    <string name="title_recipe_creation_hint">Ingresa el nombre de tu receta aquí.</string>
-    <string name="serving_size">Servings</string>
-    <string name="camera">Camera</string>
-    <string name="label_add_image">Add\nan Image</string>
-    <string name="photo_library">Photo\nLibrary</string>
-    <string name="label_ingredients_creation">Select at least on MONIN Ingredient.</string>
-    <string name="enter_measure">Enter Measure</string>
-    <string name="enter_ingredient">Enter Ingredient</string>
-    <string name="content_add_button">add button</string>
-    <string name="content_drag_icon">drag image</string>
-    <string name="add">add</string>
-    <string name="remove">remove</string>
-    <string-array name="units_creation_recipe">
-        <item>Imperial</item>
-        <item>Metric</item>
-    </string-array>
+    <string name="home_subtitle_create_gallery">Un rápido y fácil\nHágalo usted mismo Ménu Digital</string>
+    <string name="home_create_gallery">Designar\nuna Presentación</string>
+    <string name="title_recipe_creation_hint">Ingrese un nombre de receta</string>
+    <string name="camera">Cámara </string>
+    <string name="label_add_image">Agregar\nuna Imagen</string>
+    <string name="photo_library">Librería\nde Fotos</string>
+    <string name="label_ingredients_creation">Seleccione al menos un ingrediente MONIN</string>
+    <string name="enter_measure">Ingrese medida</string>
+    <string name="enter_ingredient">Ingrese ingrediente</string>
+    <string name="remove">quitar</string>
     <string-array name="complexity_creation_recipe">
-        <item>Easy</item>
-        <item>Medium</item>
-        <item>Difficult</item>
+        <item>Fácil</item>
+        <item>Media</item>
+        <item>Difícil</item>
     </string-array>
     <string-array name="filters_recipe">
-        <item>Alcoholic</item>
-        <item>Non-Alcoholic</item>
-        <item>Coffee</item>
+        <item>Cócteles</item>
+        <item>Cócteles sin Alcohol</item>
+        <item>Café y té caliente</item>
     </string-array>
-    <string-array name="fractions_array">
-        <item>none</item>
-        <item>1/8</item>
-        <item>1/4</item>
-        <item>1/2</item>
-        <item>1/3</item>
-        <item>2/3</item>
-        <item>3/4</item>
-        <item>3/8</item>
-        <item>5/8</item>
-        <item>7/8</item>
+    <string-array name="units_creation_recipe">
+        <item>Imperial</item>
+        <item>Métrico</item>
     </string-array>
-    <string-array name="major">
-        <item>spoon</item>
-        <item>cup</item>
-        <item>teaspoon</item>
-        <item>fl oz</item>
-        <item>lb</item>
-    </string-array>
-    <string name="measure_text_format"><gio:g amount="value">%1$s</gio:g> <gio:g fraction="value">%2$s</gio:g> <gio:g major="value">%3$s</gio:g></string>
-    <string name="none">none</string>
-    <string name="enter_direction">Enter directions here</string>
-    <string name="next_step">Next</string>
-    <string name="error_name_required">You must enter a name of recipe first</string>
-    <string name="error_profile">Something was wrong, try later.</string>
-    <string name="error_directions_required">You must add at least one direction before to continue</string>
-    <string name="error_ingredients_required">You must add at least one ingredient before to continue</string>
-    <string name="error_monin_ingredients_required">You must add at least one monin ingredient before to continue</string>
-    <string name="moods_userrecipe_label">Please select Applicable criteria</string>
-    <string name="share_and_save"><![CDATA[Save & Share]]></string>
-    <string name="community">Community</string>
-    <string name="following_value">following</string>
+    <string name="enter_direction">Ingrese instrucción</string>
+    <string name="next_step">Siguiente</string>
+    <string name="error_name_required">Ingrese un nombre de receta</string>
+    <string name="error_profile">Algo salió mal, por favor intentar mas tarde</string>
+    <string name="error_directions_required">Por favor ingresa una instrucción</string>
+    <string name="error_ingredients_required">Debes Agregar al menos un ingrediente para poder continuar</string>
+    <string name="error_monin_ingredients_required">Seleccione al menos un ingrediente MONIN</string>
+    <string name="moods_userrecipe_label">Por favor selecciona un criterio a aplicar</string>
+    <string name="community">Comunidad</string>
     <string name="number_recipes"><gio:g number="value">%1$s</gio:g> Recipes</string>
-    <string name="follow_value">+ follow</string>
-    <string name="id_generator_format">user<gio:g date="creationDate">%1$1s</gio:g></string>
-    <string name="message_recipe_creation_success">The recipe was created successfully</string>
-    <string name="message_change_password_success">The password was change successfully</string>
-    <string name="message_update_profile_success">Profile updated successfully</string>
-    <string name="title_recipe_creation_success">Successfully!!!</string>
-    <string name="error_photo_required">You should add or take a picture before to continue</string>
-    <string name="create_recipe_grid">Create a\nnew recipe</string>
-    <string name="following">Following</string>
-    <string name="followers">Followers</string>
-    <string name="recipes">Recipes</string>
-    <string name="favorites">Favorites</string>
-    <string name="zero">0</string>
-    <string name="profileName">profileName</string>
-    <string name="isMyProfile">isMyProfile</string>
-    <string name="slide_show">slideshow</string>
-    <string name="create_slide_show">Create a\nNew SlideShow</string>
-    <string name="title_slideshows">Custom Gallery</string>
-    <string name="hint_description_new_slide">ENTER YOUR DESCRIPTION HERE. Leave blank for no description.</string>
-    <string name="hint_title_new_slide">DRINK TITLE. Leave in blank for no title.</string>
-    <string name="hint_price_new_slide">PRICE. Leave blank for no price.</string>
-    <string name="transition_tag_image">transition_image_tag</string>
+    <string name="follow_value">+ seguir</string>
+    <string name="message_recipe_creation_success">La receta se ha creado exitósamente</string>
+    <string name="message_change_password_success">¡Se cambió la contraseña con éxito!</string>
+    <string name="message_update_profile_success">Perfil actualizado exitósamente</string>
+    <string name="title_recipe_creation_success">Exitoso!</string>
+    <string name="error_photo_required">Añada la imagen de la receta</string>
+    <string name="create_recipe_grid">Crear una\nnueva Receta</string>
+    <string name="following">Siguiendo</string>
+    <string name="followers">Seguidores</string>
+    <string name="recipes">Recetas</string>
+    <string name="favorites">Favoritos</string>
+    <string name="create_slide_show">Crear una\nNueva Presentación</string>
+    <string name="title_slideshows">Galería Personalizada</string>
+    <string name="hint_description_new_slide">INGRESE SU DESCRIPCIÓN AQUÍ</string>
+    <string name="hint_title_new_slide">TÍTULO DE BEBIDA. </string>
+    <string name="hint_price_new_slide">PRECIO.</string>
     <string name="hint_change_layout">Change Layer</string>
-    <string name="tag_slide">slide</string>
-    <string name="apply">Apply</string>
-    <string name="template_one">Template 1</string>
-    <string name="template_two">Template 2</string>
-    <string name="tag_selected_template">template1ug_tag</string>
-    <string name="tag_selected_template2">template2</string>
-    <string name="tag_position">position</string>
-    <string name="message_confirmation_delete_slide">Do you really want to delete the current Slide?</string>
-    <string name="error_no_slide_deletion">You cannot delete this Slide because is the only one that left. If you don\'t want to continue with slideshow creation press back button.</string>
-    <string name="title_delete_slide">Delete Slide</string>
-    <string name="message_confirmation_lose_info_slides">Are you sure to continue?. \nThe current slideshow will be lost.</string>
-    <string name="tag_presentation">presentation</string>
-    <string name="nodata_available">No data available</string>
-    <string name="level_easy">Easy</string>
-    <string name="level_medium">Medium</string>
-    <string name="level_difficult">Difficult</string>
-    <string name="edit_profile">EDIT PROFILE</string>
-    <string name="name">Name</string>
-    <string name="username">Username</string>
-    <string name="bio">Bio</string>
-    <string name="current_password">Current password</string>
-    <string name="new_password">New password</string>
-    <string name="confirm_password">Confirm new password</string>
+    <string name="apply">Aplicar</string>
+    <string name="template_one">Plantilla 1</string>
+    <string name="template_two">Plantilla 2</string>
+    <string name="message_confirmation_delete_slide">¿Realmente quieres borrar esta hoja de presentación?</string>
+    <string name="error_no_slide_deletion">¿Estas Seguro de querer continuar?\nLa presentación será borrada</string>
+    <string name="title_delete_slide">Borrar hoja de presentación</string>
+    <string name="message_confirmation_lose_info_slides">¿Estas Seguro de querer continuar?. \n los datos no salvados se perderan.</string>
+    <string name="nodata_available">No hay información disponible</string>
+    <string name="level_easy">Fácil</string>
+    <string name="level_medium">Regular </string>
+    <string name="level_difficult">Difícil </string>
+    <string name="edit_profile">Editar Perfil</string>
+    <string name="name">Nombre</string>
+    <string name="username">Nombre de Usuario</string>
+    <string name="bio">Acerca de mi</string>
+    <string name="current_password">Contraseña actual</string>
+    <string name="new_password">Nueva Contraseña</string>
+    <string name="confirm_password">Confirmar contraseña</string>
 
-    <string name="tag_gallery">gallery_tag</string>
-    <string name="aspect_ratio_16_9">16:9</string>
-    <string name="aspect_ratio_4_3">4:3</string>
-    <string name="tag_picture">picture</string>
-    <string name="tag_photo">photo_tag</string>
-    <string name="tag_init_presentation">init_presentation</string>
-    <string name="success_title_transaction">Successfully Transaction!</string>
-    <string name="message_slide_creation_success">Your Slide has been saved successfully</string>
-    <string name="error_title_no_image">No Image!</string>
-    <string name="error_message_no_image">You must select an image or take a picture in order to save the recipe</string>
-    <string name="title_category_account">Account</string>
-    <string name="title_category_privacy">Privacy</string>
-    <string name="title_category_preferences">Preferences</string>
-    <string name="title_category_change_email">Change Email</string>
-    <string name="title_category_link_to_social">Link Account To Social Media</string>
-    <string name="option_settings_edit_profile">Edit Profile</string>
-    <string name="option_settings_public_profile">Public Profile</string>
-    <string name="option_settings_imperial_switch">Imperial (Metric if disabled)</string>
-    <string name="option_settings_allow_location">Allow location (US Intl. If disabled)</string>
+    <string name="message_slide_creation_success">Tu hoja de presentación se ha salvado exitósamente</string>
+    <string name="error_title_no_image">No hay imagen!</string>
+    <string name="error_message_no_image">Añada la imagen de la receta</string>
+    <string name="title_category_account">Cuenta</string>
+    <string name="title_category_privacy">Privacidad</string>
+    <string name="title_category_preferences">Preferencias</string>
+    <string name="title_category_change_email">Cambiar correo electrónico</string>
+    <string name="option_settings_edit_profile">Editar Pérfil</string>
+    <string name="option_settings_public_profile">Perfil Público</string>
+    <string name="option_settings_imperial_switch">Imperial (Metrico si esta deshabilitado)</string>
+    <string name="option_settings_allow_location">Permitir ubicación (Intl. US si se desactiva)</string>
     <string name="hint_change_password_settings">user@appuser.com</string>
-    <string name="text_button_save_email_settings">Save New Email</string>
-    <string name="facebook_text_settings">Facebook</string>
-    <string name="pinterest_text_settings">Pinterest</string>
-    <string name="instagram_text_settings">Instagram</string>
-    <string name="twitter_text_settings">Twitter</string>
-    <string name="option_settings_about">About</string>
-    <string name="text_button_share_app">Share this app</string>
-    <string name="text_button_log_out">Log Out</string>
-    <string name="settings_title_screen">Account Settings</string>
-    <string name="option_settings_privacy_policy">Privacy Policy</string>
-    <string name="loading_profile">Getting user profile info…</string>
-    <string name="success_title">Successfully!!</string>
-    <string name="message_change_email_success">You email has been changed successfully!</string>
-    <string name="title_page1_about">Find Recipes</string>
-    <string name="subtitle_page1_about">We have for you most recommended drink recipes</string>
-    <string name="subtitle_page2_about">But you can also create and save your own drinks</string>
-    <string name="title_page2_about">Create Recipes</string>
-    <string name="title_page5_about">Your mood, your drink</string>
-    <string name="subtitle_page5_about">Is that chill night? or romantic date? what about a couple of friends, find your drinks</string>
-    <string name="title_page4_about">Be part of the community</string>
-    <string name="subtitle_page4_about">Find new friends and of course new recipes</string>
-    <string name="title_page3_about">Showcase your drinks</string>
-    <string name="subtitle_page3_about">¿Eres el dueño de un restaurante? You can cast a gallery with your own drinks in your own TV\'s</string>
-    <string name="app_id_pinterest">4833969804524138179</string>
-    <string name="pin_success">Pin created successfully</string>
-    <string name="tag_glass_id">glassid</string>
-    <string name="tag_glass_name">glass1</string>
-    <string name="no_glass_type">Not specified</string>
-    <string name="users">Users</string>
+    <string name="text_button_save_email_settings">Guardar nuevo correo electrónico</string>
+    <string name="option_settings_about">Acerca de</string>
+    <string name="text_button_share_app">Compartir esta Aplicación</string>
+    <string name="text_button_log_out">Cerrar Sesión</string>
+    <string name="settings_title_screen">Configuración de Cuenta</string>
+    <string name="option_settings_privacy_policy">Política de Privacidad</string>
+    <string name="loading_profile">Obteniendo perfil de usuario…</string>
+    <string name="success_title">¡Éxito!</string>
+    <string name="message_change_email_success">¡Tu email ha cambiado exitsamente!</string>
+    <string name="title_page1_about">Explorar recetas</string>
+    <string name="subtitle_page1_about">Directamente desde nuestra familia a sus manos, cientos de recetas de donde escoger</string>
+    <string name="subtitle_page2_about">Mantener una biblioteca de sus creaciones de recetas, accesible con un clic</string>
+    <string name="title_page2_about">Crear sus propias recetas</string>
+    <string name="title_page5_about">Su estado de animo, su trago</string>
+    <string name="subtitle_page5_about">¿Dará una fiesta? ¿Tiene una cita romántica? ¿O le provoca  algo rico en chocolate? Marque y busque para encontrar un trago MONIN que coincida con su humor o evento</string>
+    <string name="title_page4_about">Sea parte de la comunidad</string>
+    <string name="subtitle_page4_about">Únase a los entusiastas de tragos alrededor del mundo y vea lo que les gusta y lo que preparan. Y-comparta sus creaciones con ellos, también.</string>
+    <string name="title_page3_about">Exhibir un trago destacado</string>
+    <string name="subtitle_page3_about">¿Es usted dueño de un restaurante, bar o cafetería? Puede crear una galería a medida de tragos y mostrarlos en la tienda en otros dispositivos.</string>
+    <string name="users">Usuarios</string>
     <string name="action_community">Comunidad</string>
-    <string name="action_no_login">Skip</string>
+    <string name="action_no_login">Saltar Inicio de Sesión</string>
     <string name="edit">Editar</string>
     <string name="error_message_invalid_operation">Esta operación es invalida, no es posible realizarla.</string>
     <string name="error_no_login">Necesita autentificarse primero, por favor ingrese sus credenciales.</string>
     <string name="error_title_no_internet">Problema de Conectividad</string>
-    <string name="error_title_no_login">Problema de Autentificación</string>
+    <string name="error_title_no_login">Inicio de sesión requerido</string>
     <string name="error_title_not_possible">Operación Invalida</string>
     <string name="getting_recipes">Por favor espera, obteniendo recetas…</string>
     <string name="getting_users">Por favor espera, obteniendo usuarios…</string>
     <string name="message_confirmation_delete_recipe">¿Esta seguro de querer borrar esta receta?</string>
     <string name="message_create_update_recipe">Por favor espere, salvando receta.</string>
     <string name="message_wait_favorite">Por favor espere, procesando favorito…</string>
-    <string name="social_button_weibo_text">Ligar cuenta a Weibo</string>
+    <string name="social_button_weibo_text">VINCULAR CUENTA A WEIBO</string>
+    <string name="add">agregar</string>
+    <string name="delete_recipe">Borrar Receta</string>
+    <string name="password_long_error_message">Escriba una nueva contraseña, de al menos 6 caracteres</string>
+    <string name="or_option_text">O</string>
+    <string name="filter_by_region">Filtrar por Región</string>
+    <string name="prompt_user_name_email">Ingrese nombre de usuario o correo electrónico</string>
+    <string name="title_login_social">Elegir opción</string>
+    <string name="error_password_empty">Ingrese una contraseña</string>
+    <string name="error_name_empty">Ingrese su nombre</string>
+    <string name="error_username_empty" >Ingrese un nombre de usuario válido</string>
+    <string name="error_drink_name_empty">Ingrese el título del trago</string>
+    <string name="error_price_empty">Ingrese el precio</string>
+    <string name="error_description_empty">Please enter description</string>
+    <string name="forgot_password_title" >Olvidé mi contraseña</string>
+    <string name="save">Guardar</string>
+    <string name="error_no_recipes_found">No se encontraron recetas</string>
+    <string name="alert_title_update_recipe">Update recipe</string>
+    <string name="alert_message_update_recipe">Are you sure to update this recipe?</string>
+    <string name="yes">si</string>
+    <string name="no">no</string>
+    <string name="alert_message_recipe_updated">Recipe successfully updated!</string>
+    <string name="alert_message_recipe_deleted">Your recipe was successfully deleted!</string>
+    <string name="privacy_policy_title">Privacy Policy</string>
+    <string name="privacy_policy_header"><![CDATA[Last updated: April 11, 2016  \n\nGeorges Monin S.A.S (&quot;us&quot;, &quot;we&quot;, or &quot;our&quot;) operates https://www.monin.com/fr (the &quot;Site&quot;). This  page informs you of our policies regarding the collection, use and disclosure of Personal  Information we receive from users of the Site.  \n\nWe use your Personal Information only for providing and improving the Site. By using the Site,  you  agree to the collection and use of information in accordance with this policy.]]></string>
+    <string name="privacy_policy_information_collection">Information Collection And Use</string>
+    <string name="privacy_policy_information_collection_block"><![CDATA[While using our Site, we may ask you to provide us with certain personally identifiable  information  that can be used to contact or identify you. Personally identifiable information may include, but  is not  limited to your name (&quot;Personal Information&quot;).]]></string>
+    <string name="privacy_policy_log_data">Log Data</string>
+    <string name="privacy_policy_log_data_block">Like many site operators, we collect information that your browser sends whenever you visit our  Site  ("Log Data").  \n\nThis Log Data may include information such as your computer\'s Internet Protocol ("IP") address,  browser type, browser version, the pages of our Site that you visit, the time and date of your  visit,  the time spent on those pages and other statistics.  \n\nIn addition, we may use third party services such as Google Analytics that collect, monitor and  analyze data.</string>
+    <string name="privacy_policy_communications">Communications</string>
+    <string name="privacy_policy_communications_block">We may use your Personal Information to contact you with newsletters, marketing or  promotional  materials.</string>
+    <string name="privacy_policy_cookies">Cookies</string>
+    <string name="privacy_policy_cookies_block"><![CDATA[Cookies are files with small amount of data, which may include an anonymous unique identifier.  Cookies are sent to your browser from a web site and stored on your computer&#39;s hard drive.  Like many sites, we use &quot;cookies&quot; to collect information. You can instruct your browser to refuse  all  cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you  may  not be able to use some portions of our Site.]]></string>
+    <string name="privacy_policy_security">Security</string>
+    <string name="privacy_policy_security_block">The security of your Personal Information is important to us, but remember that no method of  transmission over the Internet, or method of electronic storage, is 100% secure. While we strive  to  use commercially acceptable means to protect your Personal Information, we cannot guarantee  its  absolute security.</string>
+    <string name="privacy_policy_changes_privacy_policy">Changes To This Privacy Policy</string>
+    <string name="privacy_policy_changes_block">This Privacy Policy is effective as of April 11, 2016 and will remain in effect except with respect  to any  changes in its provisions in the future, which will be in effect immediately after being posted on  this  page.  \n\nWe reserve the right to update or change our Privacy Policy at any time and you should check  this  Privacy Policy periodically. Your continued use of the Service after we post any modifications to  the  Privacy Policy on this page will constitute your acknowledgment of the modifications and your  consent to abide and be bound by the modified Privacy Policy.  \n\nIf we make any material changes to this Privacy Policy, we will notify you either through the  email  address you have provided us, or by placing a prominent notice on our website.</string>
+    <string name="privacy_policy_contact_us">Contact Us</string>
+    <string name="privacy_policy_contact_us_block">If you have any questions about this Privacy Policy, please contact us.</string>
+    <string name="hint_glass_type">Tipo de vaso</string>
+    <string name="error_glass_type_required">Añada el tipo de vaso</string>
 </resources>

@@ -24,7 +24,8 @@ import com.softwaremobility.data.MoninContract;
 import com.softwaremobility.data.MoninDataBase;
 import com.softwaremobility.dialogs.SocialConnect;
 import com.softwaremobility.json.JSONUtils;
-import com.softwaremobility.monin.R;
+import com.softwaremobility.monin.*;
+import com.softwaremobility.monin.Home;
 import com.softwaremobility.network.Connection;
 import com.softwaremobility.network.NetworkConnection;
 import com.softwaremobility.preferences.MoninPreferences;
@@ -120,7 +121,7 @@ public class Login extends Fragment implements View.OnClickListener, TextView.On
                 break;
             }
             case R.id.create_account: {
-                Intent intent = new Intent(getActivity(), AccountCreate.class);
+                Intent intent = new Intent(getActivity(), com.softwaremobility.monin.AccountCreate.class);
                 startActivity(intent);
                 getActivity().finish();
                 break;
