@@ -48,6 +48,18 @@
         <activity android:name=".AccountCreate"
             android:screenOrientation="sensorPortrait"
             android:windowSoftInputMode="stateHidden"/>
+        <activity android:name=".MoninRecipes"
+            android:screenOrientation="sensorPortrait"
+            android:windowSoftInputMode="stateHidden"/>
+        <activity android:name="com.sina.weibo.sdk.component.WeiboSdkBrowser"
+            android:configChanges="keyboardHidden|orientation"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="false" >
+        </activity>
+        <activity android:name=".MoodMatcher"
+            android:screenOrientation="sensorPortrait"/>
+        <activity android:name=".ResultsMoodMatcher"
+            android:screenOrientation="sensorPortrait"/>
         <provider
             android:authorities="com.softwaremobility.monin"
             android:name="com.softwaremobility.data.MoninProvider"

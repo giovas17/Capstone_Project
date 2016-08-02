@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    xmlns:grid="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include android:id="@+id/filtersSelectorMoodMatcher"
+            layout="@layout/layout_filters_selection"/>
+
+        <TextView
+            android:id="@+id/labelMoodMatcher"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/mood_matcher_question"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/space_9dp"
+            android:layout_marginBottom="@dimen/space_9dp"
+            android:gravity="center"/>
+
+        <android.support.v7.widget.GridLayout
+            android:id="@+id/containerMoodButtons"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/space_3dp"
+            grid:alignmentMode="alignBounds"
+            grid:columnCount="2"
+            grid:rowOrderPreserved="false"
+            grid:useDefaultMargins="true">
+
+        </android.support.v7.widget.GridLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_2dp"
+            android:background="@android:color/black"
+            android:layout_marginLeft="@dimen/space_6dp"
+            android:layout_marginRight="@dimen/space_6dp"
+            android:layout_marginStart="@dimen/space_6dp"
+            android:layout_marginEnd="@dimen/space_6dp"
+            android:layout_marginTop="@dimen/space_3dp"
+            android:layout_marginBottom="@dimen/space_2dp"/>
+
+        <Button
+            android:id="@+id/buttonLetSee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_6dp"
+            android:layout_marginLeft="@dimen/space_6dp"
+            android:layout_marginRight="@dimen/space_6dp"
+            android:layout_marginStart="@dimen/space_6dp"
+            android:layout_marginEnd="@dimen/space_6dp"
+            android:layout_marginBottom="@dimen/space_6dp"
+            android:background="@drawable/button_orange"
+            android:text="@string/lets_see"/>
+
+        <Button
+            android:id="@+id/buttonSaveAndShare"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_6dp"
+            android:layout_marginLeft="@dimen/space_6dp"
+            android:layout_marginRight="@dimen/space_6dp"
+            android:layout_marginStart="@dimen/space_6dp"
+            android:layout_marginEnd="@dimen/space_6dp"
+            android:layout_marginBottom="@dimen/space_6dp"
+            android:background="@drawable/button_black"
+            android:visibility="gone"
+            android:text="@string/share_and_save"
+            android:textColor="@color/colorAccent"/>
+
+    </LinearLayout>
+
+</ScrollView>

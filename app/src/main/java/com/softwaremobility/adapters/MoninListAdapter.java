@@ -36,25 +36,18 @@ public class MoninListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     private final int VIEW_TYPE_CREATE = 0;
     private final int VIEW_TYPE_NORMAL = 1;
     private Context context;
-    private boolean isGrid, isMoninRecipe, isCommunity, isSlideShow, isUserRecipe;
+    private boolean isGrid, isMoninRecipe;
     private Cursor cursor;
 
-    public MoninListAdapter(Context contextApp, boolean isGridView, boolean isMoninRecipe, boolean isCommunity, boolean isSlideShow){
+    public MoninListAdapter(Context contextApp, boolean isGridView, boolean isMoninRecipe){
         context = contextApp;
         isGrid = isGridView;
         this.isMoninRecipe = isMoninRecipe;
-        this.isCommunity = isCommunity;
-        this.isSlideShow = isSlideShow;
-        this.isUserRecipe = false;
-    }
-
-    public void setUserRecipe(boolean userRecipe) {
-        isUserRecipe = userRecipe;
     }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        if (viewType == VIEW_TYPE_CREATE && !isMoninRecipe || viewType == VIEW_TYPE_CREATE){
+        if (viewType == VIEW_TYPE_CREATE && !isMoninRecipe){
             View view = LayoutInflater.from(context).inflate(isGrid ? R.layout.item_create_grid : R.layout.item_create_list, parent,false);
             HeaderHolder headerHolder = new HeaderHolder(view);
             view.setTag(headerHolder);
@@ -91,60 +84,22 @@ public class MoninListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             viewHolder.parent.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (isUserRecipe){
-                        if (MoninPreferences.getBoolean(context, MoninPreferences.SHAREDPREFERENCE_KEY.KEY_IS_NO_LOGIN)){
-                            SimpleCustomDialog dialog = new SimpleCustomDialog(context, context.getString(R.string.error_title_no_login), context.getString(R.string.error_no_login), new SimpleCustomDialog.okListener() {
-                                @Override
-                                public void OnOkSelected() {
-                                    //MoninRecipes.shouldFinish = true;
-                                    Home.shouldFinish = true;
-                                    ((Activity)context).finish();
-                                }
-
-                                @Override
-                                public void OnCancelSelected() {
-
-                                }
-                            });
-                            dialog.setOkButtonText(context.getString(R.string.action_login));
-                            dialog.show();
-                        }else {
-                            NetworkConnection.with(context).cancelRequest();
-                            Intent intent = new Intent(context, DetailRecipe.class);
-                            intent.putExtra(MoninContract.MoninEntry.Key_IsMoninRecipe, (boolean) viewHolder.parent.getTag(R.string.key_monin_recipes));
-                            intent.putExtra(MoninContract.MoninEntry.Key_IdRecipe, (String) viewHolder.parent.getTag(R.string.key_id_recipe));
-                            intent.putExtra(MoninContract.MoninEntry.Key_Description, (String) viewHolder.parent.getTag(R.string.key_description_recipe));
-                            intent.putExtra(MoninContract.MoninEntry.Key_ImageRecipe, (byte[]) viewHolder.parent.getTag(R.string.key_image_recipe));
-                            intent.putExtra(MoninContract.MoninEntry.Key_ImageFlag, (byte[]) viewHolder.parent.getTag(R.string.key_flag_recipe));
-                            intent.putExtra(MoninContract.MoninEntry.Key_IsCoffee, (boolean) viewHolder.parent.getTag(R.string.key_coffe_recipe));
-                            intent.putExtra(MoninContract.MoninEntry.Key_IsAlcoholic, (boolean) viewHolder.parent.getTag(R.string.key_alcohol_recipe));
-                            intent.putExtra(MoninContract.MoninEntry.Key_ImageUrl, (String) viewHolder.parent.getTag(R.string.key_image_recipe_url));
-                            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
-                                Bundle bundle = ActivityOptions.makeSceneTransitionAnimation((Activity) context,
-                                        viewHolder.imageRecipe,context.getString(R.string.transition_tag_image)).toBundle();
-                                context.startActivity(intent,bundle);
-                            }else {
-                                context.startActivity(intent);
-                            }
-                        }
-                    }else {
-                        NetworkConnection.with(context).cancelRequest();
-                        Intent intent = new Intent(context, DetailRecipe.class);
-                        intent.putExtra(MoninContract.MoninEntry.Key_IsMoninRecipe, (boolean) viewHolder.parent.getTag(R.string.key_monin_recipes));
-                        intent.putExtra(MoninContract.MoninEntry.Key_IdRecipe, (String) viewHolder.parent.getTag(R.string.key_id_recipe));
-                        intent.putExtra(MoninContract.MoninEntry.Key_Description, (String) viewHolder.parent.getTag(R.string.key_description_recipe));
-                        intent.putExtra(MoninContract.MoninEntry.Key_ImageRecipe, (byte[]) viewHolder.parent.getTag(R.string.key_image_recipe));
-                        intent.putExtra(MoninContract.MoninEntry.Key_ImageFlag, (byte[]) viewHolder.parent.getTag(R.string.key_flag_recipe));
-                        intent.putExtra(MoninContract.MoninEntry.Key_IsCoffee, (boolean) viewHolder.parent.getTag(R.string.key_coffe_recipe));
-                        intent.putExtra(MoninContract.MoninEntry.Key_IsAlcoholic, (boolean) viewHolder.parent.getTag(R.string.key_alcohol_recipe));
-                        intent.putExtra(MoninContract.MoninEntry.Key_ImageUrl, (String) viewHolder.parent.getTag(R.string.key_image_recipe_url));
-                        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
-                            Bundle bundle = ActivityOptions.makeSceneTransitionAnimation((Activity) context,
-                                    viewHolder.imageRecipe, context.getString(R.string.transition_tag_image)).toBundle();
-                            context.startActivity(intent, bundle);
-                        } else {
-                            context.startActivity(intent);
-                        }
+                    NetworkConnection.with(context).cancelRequest();
+                    Intent intent = new Intent(context, DetailRecipe.class);
+                    intent.putExtra(MoninContract.MoninEntry.Key_IsMoninRecipe, (boolean) viewHolder.parent.getTag(R.string.key_monin_recipes));
+                    intent.putExtra(MoninContract.MoninEntry.Key_IdRecipe, (String) viewHolder.parent.getTag(R.string.key_id_recipe));
+                    intent.putExtra(MoninContract.MoninEntry.Key_Description, (String) viewHolder.parent.getTag(R.string.key_description_recipe));
+                    intent.putExtra(MoninContract.MoninEntry.Key_ImageRecipe, (byte[]) viewHolder.parent.getTag(R.string.key_image_recipe));
+                    intent.putExtra(MoninContract.MoninEntry.Key_ImageFlag, (byte[]) viewHolder.parent.getTag(R.string.key_flag_recipe));
+                    intent.putExtra(MoninContract.MoninEntry.Key_IsCoffee, (boolean) viewHolder.parent.getTag(R.string.key_coffe_recipe));
+                    intent.putExtra(MoninContract.MoninEntry.Key_IsAlcoholic, (boolean) viewHolder.parent.getTag(R.string.key_alcohol_recipe));
+                    intent.putExtra(MoninContract.MoninEntry.Key_ImageUrl, (String) viewHolder.parent.getTag(R.string.key_image_recipe_url));
+                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                        Bundle bundle = ActivityOptions.makeSceneTransitionAnimation((Activity) context,
+                                viewHolder.imageRecipe, context.getString(R.string.transition_tag_image)).toBundle();
+                        context.startActivity(intent, bundle);
+                    } else {
+                        context.startActivity(intent);
                     }
                 }
             });
@@ -186,9 +141,6 @@ public class MoninListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     @Override
     public int getItemCount() {
         if (cursor != null){
-            if (isSlideShow){
-                return cursor.getCount() + 1;
-            }
             if (isMoninRecipe){
                 return cursor.getCount();
             }else {

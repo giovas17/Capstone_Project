@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/listPreferredItemHeight"
+    android:gravity="center_vertical">
+
+    <ImageView
+        android:id="@+id/dragItemImageDirection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/drag_item_icon"
+        android:padding="@dimen/space_9dp"
+        android:contentDescription="@string/content_drag_icon"
+        android:visibility="gone"/>
+
+    <EditText
+        android:id="@+id/textNewDirection"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:maxLines="1"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:layout_margin="@dimen/space_3dp"
+        android:textColorHint="@color/disabledLoginButton"
+        android:background="@drawable/white_edit_text"
+        android:drawableRight="@drawable/plus_add_icon"
+        android:drawableEnd="@drawable/plus_add_icon"
+        android:hint="@string/enter_direction"/>
+
+    <LinearLayout
+        android:id="@+id/addedDirection"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_margin="@dimen/space_3dp"
+        android:background="@drawable/white_edit_text"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/sequenceNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textStyle="bold"
+            android:text="1."/>
+
+        <EditText
+            android:id="@+id/textNewDirectionAdded"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:text="Prueba numero 1"
+            android:layout_marginLeft="@dimen/space_3dp"
+            android:layout_marginStart="@dimen/space_3dp"
+            android:background="@android:color/white"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/addingButtonDirections"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/add_item_icon"
+        android:padding="@dimen/space_9dp"
+        android:tag="@string/add"
+        android:clickable="true"
+        android:contentDescription="@string/content_add_button"/>
+
+</LinearLayout>

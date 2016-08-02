@@ -98,6 +98,9 @@ public class Home extends AppCompatActivity {
         if (view.getId() == R.id.imageOfficialMonin){
             intent = new Intent(this, MoninRecipes.class);
             startActivity(intent);
+        }else if(view.getId() == R.id.imageMoodMatcher){
+            intent = new Intent(this, MoodMatcher.class);
+            startActivity(intent);
         }else {
             boolean isNoLogin = MoninPreferences.getBoolean(this, MoninPreferences.SHAREDPREFERENCE_KEY.KEY_IS_NO_LOGIN);
             if (isNoLogin){

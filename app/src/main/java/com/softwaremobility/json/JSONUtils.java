@@ -6,6 +6,7 @@ import android.util.Log;
 import com.softwaremobility.data.MoninContract;
 import com.softwaremobility.data.MoninDataBase;
 import com.softwaremobility.monin.R;
+import com.softwaremobility.objects.ButtonMoodMatcher;
 import com.softwaremobility.objects.Detail_Recipe;
 import com.softwaremobility.objects.Direction;
 import com.softwaremobility.objects.FractionOption;
@@ -189,6 +190,24 @@ public class JSONUtils {
             }
         }
         return list;
+    }
+
+    public List<ButtonMoodMatcher> getButtonsMoodMatcher(String JSONResponse){
+        List<ButtonMoodMatcher> buttons = new ArrayList<>();
+        try{
+            JSONObject obj = new JSONObject(JSONResponse);
+            JSONArray array = obj.getJSONArray(context.getString(R.string.key_moods));
+            for (int i = 0; i < array.length() ; i++){
+                JSONObject object = array.getJSONObject(i);
+                String text = object.getString(context.getString(R.string.key_mood_description));
+                String id = object.getString(context.getString(R.string.key_mood_id));
+                ButtonMoodMatcher buttonMoodMatcher = new ButtonMoodMatcher(text,id);
+                buttons.add(buttonMoodMatcher);
+            }
+            return buttons;
+        }catch (JSONException e){
+            return null;
+        }
     }
 
     public Detail_Recipe getDetailRecipe(String JSONStr){

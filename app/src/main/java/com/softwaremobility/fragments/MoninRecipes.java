@@ -80,7 +80,7 @@ public class MoninRecipes extends Fragment implements OnChangeListStyleListener,
     private LocationManager locman;
     private Location currentLocation;
     private MoninDataBase dataBase;
-    private boolean isMoninRecipes = false,isAlcoholic = false, isNonAlcoholic = false,
+    private boolean isMoninRecipes = true,isAlcoholic = false, isNonAlcoholic = false,
             isCoffee = false,regionFilter = true, areMorePages = true;
     private boolean showFilters = false, showFiltersRegion = false;
 
@@ -210,7 +210,7 @@ public class MoninRecipes extends Fragment implements OnChangeListStyleListener,
                 }
             }
         });
-        adapter = new MoninListAdapter(getActivity(), isGrid, isMoninRecipes, false, false);
+        adapter = new MoninListAdapter(getActivity(), isGrid, isMoninRecipes);
         listRecipes = (EmptyRecyclerView) view.findViewById(R.id.moninRecipesRecycler);
         View empty = view.findViewById(R.id.emptyView);
         listRecipes.setEmptyView(empty);

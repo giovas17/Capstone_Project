@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/refreshingResultsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.softwaremobility.utilities.EmptyRecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="@dimen/space_6dp"
+            android:paddingRight="@dimen/space_6dp"
+            android:paddingEnd="@dimen/space_6dp"
+            android:paddingStart="@dimen/space_6dp"
+            android:background="@android:color/white"
+            android:id="@+id/resultsRecipesRecycler">
+
+        </com.softwaremobility.utilities.EmptyRecyclerView>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <LinearLayout
+        android:id="@+id/emptyViewResults"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@color/disabledLoginButton">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nodata_available"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"/>
+
+    </LinearLayout>
+
+</FrameLayout>

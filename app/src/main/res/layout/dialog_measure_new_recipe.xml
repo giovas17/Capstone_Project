@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="@dimen/space_700dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:text="Measure"
+        android:textColor="@color/colorAccent"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:padding="@dimen/space_6dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_2dp"
+        android:background="@color/colorAccent"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="@dimen/space_6dp"
+        android:layout_marginTop="@dimen/space_6dp">
+
+        <NumberPicker
+            android:id="@+id/numberByTen"
+            android:layout_width="@dimen/space_25dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/space_3dp"/>
+        <NumberPicker
+            android:id="@+id/numberUnits"
+            android:layout_width="@dimen/space_25dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/space_3dp"/>
+        <View
+            android:layout_width="@dimen/space_13dp"
+            android:layout_height="@dimen/space_2dp"
+            android:background="@android:color/black"
+            android:padding="@dimen/space_3dp"/>
+        <NumberPicker
+            android:id="@+id/numberFraction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/space_3dp"/>
+        <View
+            android:layout_width="@dimen/space_13dp"
+            android:layout_height="@dimen/space_2dp"
+            android:background="@android:color/black"
+            android:padding="@dimen/space_3dp"/>
+        <NumberPicker
+            android:id="@+id/numberMajor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/space_3dp"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/space_6dp"
+        android:gravity="end">
+        <Button
+            android:id="@+id/negativeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel"/>
+        <Button
+            android:id="@+id/positiveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ok"/>
+    </LinearLayout>
+</LinearLayout>

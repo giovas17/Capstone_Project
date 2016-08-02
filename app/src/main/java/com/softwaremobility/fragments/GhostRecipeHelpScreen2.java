@@ -9,7 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.itexico.activities.R;
+import com.softwaremobility.monin.R;
+
 
 /**
  * Created by developeri on 4/1/16.

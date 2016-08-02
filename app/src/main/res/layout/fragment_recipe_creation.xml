@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/space_6dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:orientation="vertical" android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/space_200dp"
+                android:id="@+id/imageRecipeCreation"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/logo_panache"
+                android:clickable="true"
+                android:contentDescription="@string/image_item_content_description"
+                android:background="@android:color/white"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <RelativeLayout
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/space_70dp"
+                android:layout_centerInParent="true"
+                android:padding="@dimen/space_13dp"
+                android:background="@android:color/black"
+                android:alpha="0.7"
+                android:id="@+id/relativeLayout">
+
+                <TextView
+                    android:id="@+id/cameraButtonCreation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                    android:text="@string/camera"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:layout_centerVertical="true"
+                    android:textColor="@android:color/white"
+                    android:drawableTop="@drawable/camera_icon"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"/>
+
+                <TextView
+                    android:id="@+id/labelButtonCreation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                    android:text="@string/label_add_image"
+                    android:textAllCaps="true"
+                    android:gravity="center"
+                    android:textColor="@android:color/white"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerInParent="true" />
+
+                <TextView
+                    android:id="@+id/galleryButtonCreation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                    android:text="@string/photo_library"
+                    android:gravity="center"
+                    android:textColor="@android:color/white"
+                    android:drawableTop="@drawable/photo_library_icon"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:clickable="true"
+                    android:layout_alignTop="@+id/labelButtonCreation"
+                    android:layout_toRightOf="@+id/labelButtonCreation"
+                    android:layout_toEndOf="@+id/labelButtonCreation"
+                    android:layout_marginLeft="@dimen/activity_vertical_margin"
+                    android:layout_marginStart="@dimen/activity_vertical_margin"
+                    android:layout_alignParentBottom="true" />
+
+            </RelativeLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_2dp"
+                android:id="@+id/dividerDetail"
+                android:background="@android:color/black"
+                android:layout_below="@+id/imageRecipeCreation"
+                android:layout_marginTop="@dimen/space_4dp"
+                android:layout_marginBottom="@dimen/space_4dp"/>
+
+        </RelativeLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textDescriptionCreateRecipe"
+            android:hint="@string/title_recipe_creation_hint"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:inputType="textPersonName"
+            android:layout_marginTop="@dimen/space_6dp"
+            android:layout_marginBottom="@dimen/space_6dp"
+            android:padding="@dimen/space_3dp"
+            android:background="@color/cofees"/>
+
+
+        <com.weiwangcn.betterspinner.library.BetterSpinner
+            android:id="@+id/autoComplete"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_glass_type"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_4dp"
+            android:layout_marginBottom="@dimen/space_4dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonUnitsCreation"
+                android:layout_margin="@dimen/space_3dp"
+                android:padding="@dimen/space_6dp"
+                android:minWidth="@dimen/space_90dp"
+                android:gravity="center"
+                android:textStyle="italic"
+                android:clickable="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:background="@drawable/button_black"
+                android:textColor="@color/colorAccent"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonComplexityCreation"
+                android:layout_margin="@dimen/space_3dp"
+                android:padding="@dimen/space_6dp"
+                android:minWidth="@dimen/space_90dp"
+                android:gravity="center"
+                android:textStyle="italic"
+                android:background="@drawable/button_black"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:textColor="@color/colorAccent"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonTypeCreation"
+                android:minWidth="@dimen/space_90dp"
+                android:layout_margin="@dimen/space_3dp"
+                android:padding="@dimen/space_6dp"
+                android:textStyle="italic"
+                android:gravity="center"
+                android:background="@color/black_button"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:textColor="@color/colorAccent"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_6dp"
+            android:layout_marginBottom="@dimen/space_6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minWidth="@dimen/space_200dp"
+                android:orientation="horizontal"
+                android:id="@+id/titlesIngredients"
+                android:background="@color/login_box_bg_color">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textIngredientsTitleDetail"
+                    android:text="@string/ingredients"
+                    android:textAllCaps="true"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                    android:padding="@dimen/space_4dp" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textIngredientsDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_9dp"
+                android:layout_marginBottom="@dimen/space_9dp"
+                android:layout_below="@+id/titlesIngredients"
+                android:textColor="@color/black_button_pressed"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:text="@string/label_ingredients_creation"/>
+
+            <LinearLayout
+                android:id="@+id/containerIngredientsCreation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textIngredientsDetail"
+                android:animateLayoutChanges="true"
+                android:layout_marginBottom="@dimen/space_9dp"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textDirectionsTitleDetail"
+                android:text="@string/instructions"
+                android:textAllCaps="true"
+                android:background="@color/login_box_bg_color"
+                android:layout_below="@+id/containerIngredientsCreation"
+                android:minWidth="@dimen/space_120dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:padding="@dimen/space_4dp"
+                android:layout_alignRight="@+id/titlesIngredients"
+                android:layout_alignEnd="@+id/titlesIngredients"
+                android:layout_marginBottom="@dimen/space_9dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <LinearLayout
+                android:id="@+id/containerDirectionsCreation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textDirectionsTitleDetail"
+                android:animateLayoutChanges="true"
+                android:layout_marginBottom="@dimen/space_9dp"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/buttonMoodMatcher"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_black"
+                android:textColor="@color/colorAccent"
+                android:text="EDIT MOODS"
+                android:visibility="gone"
+                android:layout_below="@+id/containerDirectionsCreation"/>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_2dp"
+                android:id="@+id/dividerDetail2"
+                android:background="@android:color/black"
+                android:layout_below="@+id/buttonMoodMatcher"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/space_6dp"
+                android:layout_marginBottom="@dimen/space_6dp"/>
+
+            <Button
+                android:id="@+id/buttonNextStep"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_black"
+                android:textColor="@color/colorAccent"
+                android:text="@string/next_step"
+                android:layout_below="@+id/dividerDetail2"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -52,7 +52,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
             android:text="@string/home_subtitle_official_monin"
             android:id="@+id/textView9"
             android:textAllCaps="true"
@@ -96,7 +96,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-            android:text="@string/home_mood_matcher"
+            android:text="@string/home_my_recipes"
             android:textColor="@color/black_button"
             android:textAllCaps="true"
             android:gravity="center"
@@ -110,8 +110,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:text="@string/home_subtitle_mood_matcher"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:text="@string/home_subtitle_myrecipes"
             android:id="@+id/textSubtitleMoodMatcher"
             android:textColor="@color/black_button"
             android:textAllCaps="true"
@@ -122,6 +122,71 @@
             android:layout_alignStart="@+id/view2"
             android:layout_alignRight="@+id/view2"
             android:layout_alignEnd="@+id/view2" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingTop="@dimen/margin_top_home_image">
+
+        <ImageView
+            android:id="@+id/imageMoodMatcher"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/moodmatcher"
+            android:contentDescription="@string/home_mood_matcher"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:onClick="Selector"
+            android:scaleType="centerCrop" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/backround_protection"/>
+
+        <View
+            android:layout_width="@dimen/width_divider_home"
+            android:layout_height="@dimen/height_dividers"
+            android:background="@color/cofees"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="@dimen/margin_divider_home"
+            android:layout_centerVertical="true"
+            android:id="@+id/view3" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:text="@string/home_mood_matcher"
+            android:textAllCaps="true"
+            android:textColor="@color/cofees"
+            android:gravity="center"
+            android:id="@+id/textMoodMatcherTitle"
+            android:layout_above="@+id/view3"
+            android:layout_alignLeft="@+id/view3"
+            android:layout_alignStart="@+id/view3"
+            android:layout_alignRight="@+id/view3"
+            android:layout_alignEnd="@+id/view3" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:text="@string/home_subtitle_mood_matcher"
+            android:id="@+id/textView10"
+            android:textAllCaps="true"
+            android:gravity="center"
+            android:textStyle="italic"
+            android:textColor="@color/cofees"
+            android:layout_below="@+id/view3"
+            android:layout_alignLeft="@+id/view3"
+            android:layout_alignStart="@+id/view3"
+            android:layout_alignRight="@+id/view3"
+            android:layout_alignEnd="@+id/view3" />
 
     </RelativeLayout>
 
