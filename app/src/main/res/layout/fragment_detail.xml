@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_detail_layout"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:orientation="vertical" android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/heigh_image_detail"
+                android:id="@+id/imageRecipeDetail"
+                android:layout_alignParentTop="true"
+                android:scaleType="fitCenter"
+                android:contentDescription="@string/image_item_content_description"
+                android:background="@android:color/white"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageFlagRecipeDetail"
+                android:src="@mipmap/ic_launcher"
+                android:visibility="gone"
+                android:layout_marginLeft="@dimen/margin_image_detail"
+                android:layout_marginStart="@dimen/margin_image_detail"
+                android:contentDescription="@string/flag_content_description"
+                android:layout_alignBottom="@+id/imageRecipeDetail"
+                android:layout_toRightOf="@+id/imageBadgeRecipeDetail"
+                android:layout_toEndOf="@+id/imageBadgeRecipeDetail"
+                android:layout_alignTop="@+id/imageBadgeRecipeDetail" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageBadgeRecipeDetail"
+                android:contentDescription="@string/monin_badge_content_description"
+                android:src="@drawable/monin_badge_icon"
+                android:layout_alignBottom="@+id/imageRecipeDetail"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignTop="@+id/imageShareRecipeDetail" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageFavoriteRecipeDetail"
+                android:padding="@dimen/padding_favorites_detail"
+                android:contentDescription="@string/favorite_content_description_detail"
+                android:layout_alignBottom="@+id/imageRecipeDetail"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/details_fav_icon"
+                android:layout_alignTop="@+id/imageShareRecipeDetail" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_favorites_detail"
+                android:layout_marginRight="@dimen/margin_favorites_detail"
+                android:layout_marginEnd="@dimen/margin_favorites_detail"
+                android:contentDescription="@string/share_action_content_description"
+                android:id="@+id/imageShareRecipeDetail"
+                android:layout_alignBottom="@+id/imageRecipeDetail"
+                android:layout_toLeftOf="@+id/imageFavoriteRecipeDetail"
+                android:layout_toStartOf="@+id/imageFavoriteRecipeDetail"
+                android:src="@drawable/details_share_icon" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_dividers"
+                android:id="@+id/dividerDetail"
+                android:background="@android:color/black"
+                android:layout_below="@+id/imageRecipeDetail"
+                android:layout_marginTop="@dimen/margin_divider_detail"
+                android:layout_marginBottom="@dimen/margin_divider_detail"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textDescriptionDetail"
+            android:text="@string/default_title"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:layout_marginTop="@dimen/margin_top_title_detail"
+            android:layout_marginBottom="@dimen/margin_top_title_detail"
+            android:padding="@dimen/padding_title_detail"
+            android:background="@color/cofees"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_buttons_detail"
+            android:layout_marginBottom="@dimen/margin_buttons_detail"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonServings"
+                android:layout_margin="@dimen/space_3dp"
+                android:padding="@dimen/space_6dp"
+                android:minWidth="@dimen/space_90dp"
+                android:text="@string/servings_button"
+                android:gravity="center"
+                android:textStyle="italic"
+                android:clickable="true"
+                android:visibility="gone"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:background="@drawable/button_black"
+                android:textColor="@color/colorAccent"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonUnits"
+                android:layout_margin="@dimen/margin_between_buttons_detail"
+                android:padding="@dimen/padding_buttons_detail"
+                android:minWidth="@dimen/min_width_buttons_detail"
+                android:gravity="center"
+                android:textStyle="italic"
+                android:text=""
+                android:background="@drawable/button_black"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:textColor="@color/colorAccent"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonComplexity"
+                android:minWidth="@dimen/min_width_buttons_detail"
+                android:layout_margin="@dimen/margin_between_buttons_detail"
+                android:padding="@dimen/padding_buttons_detail"
+                android:textStyle="italic"
+                android:gravity="center"
+                android:background="@color/login_box_bg_color"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:text=""/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_buttons_detail"
+            android:layout_marginBottom="@dimen/margin_buttons_detail">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/titlesIngredients"
+                android:background="@color/login_box_bg_color">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textIngredientsTitleDetail"
+                    android:text="@string/ingredients"
+                    android:textAllCaps="true"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                    android:padding="@dimen/padding_text_views_titles_detail" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:id="@+id/textGlassDetail"
+                    android:layout_marginLeft="@dimen/padding_text_views_titles_detail"
+                    android:layout_marginStart="@dimen/padding_text_views_titles_detail"
+                    android:layout_marginRight="@dimen/padding_text_views_titles_detail"
+                    android:layout_marginEnd="@dimen/padding_text_views_titles_detail"
+                    android:textStyle="bold|italic"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:ellipsize="end" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textIngredientsDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_text_ingredient_detail"
+                android:layout_below="@+id/titlesIngredients"
+                android:textColor="@color/black_button_pressed"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textDirectionsTitleDetail"
+                android:text="@string/instructions"
+                android:textAllCaps="true"
+                android:background="@color/login_box_bg_color"
+                android:layout_below="@+id/textIngredientsDetail"
+                android:minWidth="@dimen/min_width_directions_text_detail"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:padding="@dimen/padding_buttons_detail"
+                android:layout_alignRight="@+id/titlesIngredients"
+                android:layout_alignEnd="@+id/titlesIngredients"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <LinearLayout
+                android:id="@+id/containerDirectionsCreation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_top_container_directions_detail"
+                android:layout_below="@id/textDirectionsTitleDetail"
+                android:layout_marginBottom="@dimen/margin_bottom_container_directions_detail"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</ScrollView>

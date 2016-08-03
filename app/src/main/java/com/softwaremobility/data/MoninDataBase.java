@@ -203,6 +203,14 @@ public class MoninDataBase {
         close();
     }
 
+    public void updateImageUlrRecipe(String id, String url){
+        open();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(MoninContract.MoninEntry.Key_ImageUrl, url);
+        myDataBase.update(MoninContract.MoninEntry.TABLE_NAME,contentValues,MoninContract.MoninEntry.Key_IdRecipe + "=?",new String[]{id});
+        close();
+    }
+
     public void newEntryDetailRecipe(Detail_Recipe recipe, String id){
         open();
         ContentValues values = new ContentValues();

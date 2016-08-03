@@ -326,4 +326,5 @@
     <string name="privacy_policy_contact_us_block">If you have any questions about this Privacy Policy, please contact us.</string>
     <string name="hint_glass_type">Glass Type</string>
     <string name="error_glass_type_required">Please add glass type</string>
+    <string name="logout_ghost_text">You can\nLogout here</string>
 </resources>

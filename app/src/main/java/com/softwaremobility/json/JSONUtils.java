@@ -89,6 +89,18 @@ public class JSONUtils {
         }
     }
 
+    public String getPhotoFromDetailCall(String JSONStr){
+        String photo;
+        try {
+            JSONObject object = new JSONObject(JSONStr);
+            photo = object.optString(getContext().getString(R.string.key_image_user_recipe),"");
+            return photo;
+        }catch (JSONException e){
+            Log.e("JSONException ", e.toString());
+            return null;
+        }
+    }
+
 
     public String getErrorMessageDescription(String response){
         String errorMessage = null;

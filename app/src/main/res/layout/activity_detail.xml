@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <include
+        android:id="@+id/toolBarDetailRecipe"
+        layout="@layout/toolbar" />
+
+    <fragment
+        android:id="@+id/fragmentDetailRecipe"
+        android:name="com.softwaremobility.fragments.Detail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolBarDetailRecipe"
+        tools:layout="@layout/fragment_detail" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarGhostDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/white_transparency"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <RelativeLayout
+        android:id="@+id/ghostScreenDetail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@+id/fragmentDetailRecipe"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/toolbarGhostDetail"
+        android:background="@color/white_transparency"
+        android:clickable="true">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/space_6dp"
+            android:weightSum="1"
+            android:id="@+id/linearLayout">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imageRecipeDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/space_200dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:background="@android:color/white"
+                    android:contentDescription="@string/image_item_content_description"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/placeholder"
+                    android:visibility="invisible" />
+
+                <ImageView
+                    android:id="@+id/imageFlagRecipeDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/imageRecipeDetail"
+                    android:layout_alignTop="@+id/imageBadgeRecipeDetail"
+                    android:layout_marginLeft="@dimen/space_4dp"
+                    android:layout_marginStart="@dimen/space_4dp"
+                    android:layout_toEndOf="@+id/imageBadgeRecipeDetail"
+                    android:layout_toRightOf="@+id/imageBadgeRecipeDetail"
+                    android:contentDescription="@string/flag_content_description"
+                    android:src="@mipmap/ic_launcher"
+                    android:visibility="invisible" />
+
+                <ImageView
+                    android:id="@+id/imageBadgeRecipeDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/imageRecipeDetail"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignTop="@+id/imageShareRecipeDetail"
+                    android:contentDescription="@string/monin_badge_content_description"
+                    android:src="@drawable/monin_badge_icon"
+                    android:visibility="invisible" />
+
+                <ImageView
+                    android:id="@+id/imageFavoriteRecipeDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/imageRecipeDetail"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:contentDescription="@string/favorite_content_description_detail"
+                    android:padding="@dimen/space_4dp"
+                    android:src="@drawable/details_fav_icon_pressed"
+                    android:visibility="invisible" />
+
+                <ImageView
+                    android:id="@+id/imageShareRecipeDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/imageRecipeDetail"
+                    android:layout_marginEnd="@dimen/space_6dp"
+                    android:layout_marginRight="@dimen/space_6dp"
+                    android:layout_toLeftOf="@+id/imageFavoriteRecipeDetail"
+                    android:layout_toStartOf="@+id/imageFavoriteRecipeDetail"
+                    android:contentDescription="@string/share_action_content_description"
+                    android:padding="@dimen/space_4dp"
+                    android:src="@drawable/details_share_icon"
+                    android:visibility="invisible" />
+
+                <View
+                    android:id="@+id/dividerDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_2dp"
+                    android:layout_below="@+id/imageRecipeDetail"
+                    android:layout_marginBottom="@dimen/space_4dp"
+                    android:layout_marginTop="@dimen/space_4dp"
+                    android:background="@android:color/black"
+                    android:visibility="invisible" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/textDescriptionDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/space_6dp"
+                android:layout_marginTop="@dimen/space_6dp"
+                android:background="@color/cofees"
+                android:padding="@dimen/space_3dp"
+                android:text="Title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:visibility="invisible" />
+
+            <RelativeLayout
+                android:id="@+id/buttonsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/space_4dp"
+                android:layout_marginTop="@dimen/space_4dp">
+
+                <TextView
+                    android:id="@+id/buttonServings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/space_3dp"
+                    android:background="@drawable/button_black"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:minWidth="@dimen/space_90dp"
+                    android:padding="@dimen/space_6dp"
+                    android:text="@string/servings_button_Help"
+                    android:visibility="invisible"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="italic"
+                     />
+
+                <TextView
+                    android:id="@+id/buttonUnits"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/space_3dp"
+                    android:layout_toRightOf="@+id/buttonServings"
+                    android:background="@drawable/button_black"
+                    android:gravity="center"
+                    android:minWidth="@dimen/space_90dp"
+                    android:padding="@dimen/space_6dp"
+                    android:text="Imperial"
+                    android:visibility="invisible"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="italic"
+                   />
+
+                <TextView
+                    android:id="@+id/buttonComplexity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/space_3dp"
+                    android:layout_toRightOf="@+id/buttonUnits"
+                    android:background="@color/login_box_bg_color"
+                    android:gravity="center"
+                    android:minWidth="@dimen/space_90dp"
+                    android:padding="@dimen/space_6dp"
+                    android:text="Easy"
+                    android:visibility="invisible"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                    android:textStyle="italic" />
+
+
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <android.support.v4.view.ViewPager
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:id="@+id/viewpagerDetail"/>
+
+        <TextView
+            android:id="@+id/textViewGotItDetailSkipTip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:text="@string/skip_tip"
+            android:textAllCaps="true"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+             />
+
+        <TextView
+            android:id="@+id/textViewGotItDetailNextTip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:text="@string/Next_tip"
+            android:textAllCaps="true"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:id="@+id/textViewDetailGotIt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:text="@string/got_it"
+            android:textAllCaps="true"
+            android:visibility="invisible"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radiogroupDetail"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="15dp"
+            android:layout_centerInParent="true"
+            >
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/radiodetail1"
+                android:button="@drawable/pagination_indicator"
+                android:layout_margin="@dimen/space_3dp"
+                android:checked="true"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/pagination_indicator"
+                android:layout_margin="@dimen/space_3dp"
+                android:id="@+id/radiodetail2"/>
+
+
+        </RadioGroup>
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+</RelativeLayout>
