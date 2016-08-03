@@ -365,7 +365,7 @@ public class CreateRecipes extends Fragment implements MeasureListener, Location
         cameraShoot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), PreviewCropImage.class);
+                Intent intent = new Intent(getActivity(), com.softwaremobility.monin.PreviewCropImage.class);
                 intent.putExtra(getString(R.string.tag_photo),true);
                 startActivityForResult(intent, PICK_IMAGE_REQUEST);
             }
@@ -375,7 +375,7 @@ public class CreateRecipes extends Fragment implements MeasureListener, Location
         imagePicker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), PreviewCropImage.class);
+                Intent intent = new Intent(getActivity(), com.softwaremobility.monin.PreviewCropImage.class);
                 intent.putExtra(getString(R.string.tag_gallery),true);
                 startActivityForResult(intent, PICK_IMAGE_REQUEST);
             }
