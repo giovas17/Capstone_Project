@@ -15,46 +15,54 @@
         android:name="android.hardware.camera"
         android:required="true" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:supportsRtl="true"
         android:largeHeap="true"
+        android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Login"
+        <activity
+            android:name=".Login"
             android:screenOrientation="sensorPortrait"
-            android:windowSoftInputMode="stateHidden"/>
-        <activity android:name=".Home"
-            android:screenOrientation="sensorPortrait"/>
-        <activity android:name=".AccountCreate"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Home"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".AccountCreate"
             android:screenOrientation="sensorPortrait"
-            android:windowSoftInputMode="stateHidden"/>
-        <activity android:name=".MoninRecipes"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".MoninRecipes"
             android:screenOrientation="sensorPortrait"
-            android:windowSoftInputMode="stateHidden"/>
-        <activity android:name="com.sina.weibo.sdk.component.WeiboSdkBrowser"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.sina.weibo.sdk.component.WeiboSdkBrowser"
             android:configChanges="keyboardHidden|orientation"
-            android:windowSoftInputMode="adjustResize"
-            android:exported="false" >
-        </activity>
-        <activity android:name=".MoodMatcher"
-            android:screenOrientation="sensorPortrait"/>
-        <activity android:name=".ResultsMoodMatcher"
-            android:screenOrientation="sensorPortrait"/>
-        <activity android:name=".CreateRecipes"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"></activity>
+        <activity
+            android:name=".MoodMatcher"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".ResultsMoodMatcher"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".CreateRecipes"
             android:screenOrientation="sensorPortrait"
-            android:windowSoftInputMode="stateHidden"/>
-        <activity android:name=".DetailRecipe"
-            android:screenOrientation="sensorPortrait"/>
-        <activity android:name=".PreviewCropImage"/>
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".DetailRecipe"
+            android:screenOrientation="sensorPortrait" />
+        <activity android:name=".PreviewCropImage" />
 
         <!-- Facebook login changes starts... -->
         <meta-data
@@ -69,15 +77,23 @@
         <!-- Facebook login changes end... -->
 
         <provider
-            android:authorities="com.softwaremobility.monin"
             android:name="com.softwaremobility.data.MoninProvider"
+            android:authorities="com.softwaremobility.monin"
             android:exported="true" />
         <provider
             android:name="com.facebook.FacebookContentProvider"
             android:authorities="com.facebook.app.FacebookContentProvider1683078451909458"
             android:exported="true" />
 
+        <receiver android:name=".MoninWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
 
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/monin_widget_info" />
+        </receiver>
     </application>
 
 </manifest>

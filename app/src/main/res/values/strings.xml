@@ -295,11 +295,11 @@
     <string name="filter_by_region">Filter by Region</string>
     <string name="prompt_user_name_email">Enter your username or email</string>
     <string name="title_login_social">Choose option</string>
-    <string name="error_username_empty" >Please enter a valid username</string>
+    <string name="error_username_empty">Please enter a valid username</string>
     <string name="error_drink_name_empty">Please enter drink title</string>
     <string name="error_price_empty">Please enter price</string>
     <string name="error_description_empty">Please enter description</string>
-    <string name="forgot_password_title" >Forgot Password</string>
+    <string name="forgot_password_title">Forgot Password</string>
     <string name="save">Save</string>
     <string name="error_no_recipes_found">No recipes found</string>
     <string name="alert_title_update_recipe">Update recipe</string>
@@ -327,4 +327,6 @@
     <string name="hint_glass_type">Glass Type</string>
     <string name="error_glass_type_required">Please add glass type</string>
     <string name="logout_ghost_text">You can\nLogout here</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
 </resources>

@@ -106,4 +106,10 @@
     <dimen name="margin_top_container_directions_detail">6dp</dimen>
     <dimen name="margin_bottom_container_directions_detail">9dp</dimen>
     <dimen name="margin_button_go_it_helper">20dp</dimen>
+
+    <!--
+Refer to App Widget Documentation for margin information
+http://developer.android.com/guide/topics/appwidgets/index.html#CreatingLayout
+    -->
+    <dimen name="widget_margin">8dp</dimen>
 </resources>
