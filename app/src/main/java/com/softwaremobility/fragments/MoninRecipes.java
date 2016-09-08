@@ -2,6 +2,7 @@ package com.softwaremobility.fragments;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.location.Location;
 import android.location.LocationListener;
@@ -83,6 +84,7 @@ public class MoninRecipes extends Fragment implements OnChangeListStyleListener,
     private boolean isMoninRecipes = true,isAlcoholic = false, isNonAlcoholic = false,
             isCoffee = false,regionFilter = true, areMorePages = true;
     private boolean showFilters = false, showFiltersRegion = false;
+    public static final String ACTION_DATA_UPDATED = "com.softwaremobility.monin.app.ACTION_DATA_UPDATED";
 
     private static String[] columns = new String[]{
         MoninContract.MoninEntry.Key_IdRecipe,
@@ -431,6 +433,8 @@ public class MoninRecipes extends Fragment implements OnChangeListStyleListener,
                     }
                     Utils.storeRecipesAndRefreshLoader(dummyItems, getActivity(), isMoninRecipes,
                             regionFilter, uri, currentPage, MoninRecipes.this);
+                    Intent dataUpdatedIntent = new Intent(ACTION_DATA_UPDATED);
+                    getContext().sendBroadcast(dataUpdatedIntent);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

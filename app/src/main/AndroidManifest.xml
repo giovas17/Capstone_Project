@@ -85,9 +85,10 @@
             android:authorities="com.facebook.app.FacebookContentProvider1683078451909458"
             android:exported="true" />
 
-        <receiver android:name=".MoninWidget">
+        <receiver android:name="com.softwaremobility.widgets.MoninWidget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.softwaremobility.monin.app.ACTION_DATA_UPDATED" />
             </intent-filter>
 
             <meta-data
