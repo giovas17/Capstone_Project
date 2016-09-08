@@ -14,6 +14,19 @@ android {
         renderscriptTargetApi 18
         renderscriptSupportModeEnabled true
     }
+    signingConfigs {
+        release {
+            try {
+                storeFile file("Monin.jks")
+                storePassword KEYSTORE_PASSWORD
+                keyAlias "Monin"
+                keyPassword KEY_PASSWORD
+            }
+            catch (ex) {
+                throw new InvalidUserDataException("You should define KEYSTORE_PASSWORD and KEY_PASSWORD in gradle.properties.")
+            }
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false
