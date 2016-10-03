@@ -1020,7 +1020,7 @@ public class CreateRecipes extends Fragment implements MeasureListener, Location
         if (ingredient_selected.getFraction().equalsIgnoreCase(getString(R.string.none))){
             ingredient_selected.setFraction("");
         }
-        textMeasure.setText(getString(R.string.measure_text_format, Integer.parseInt(String.valueOf((int)object.getAmount())),object.getFraction(), object.getMeasure()));
+        textMeasure.setText(getString(R.string.measure_text_format, String.valueOf((int)object.getAmount()),object.getFraction(), object.getMeasure()));
         textMeasure.setTextColor(Color.BLACK);
     }
 
