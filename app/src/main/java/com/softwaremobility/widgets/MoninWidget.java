@@ -16,6 +16,7 @@ import android.widget.RemoteViews;
 
 import com.softwaremobility.fragments.Detail;
 import com.softwaremobility.fragments.MoninRecipes;
+import com.softwaremobility.monin.DetailRecipe;
 import com.softwaremobility.monin.R;
 import com.softwaremobility.services.MoninWidgetIntentService;
 
@@ -38,7 +39,7 @@ public class MoninWidget extends AppWidgetProvider{
             PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intentPrincipal, 0);
             remoteViews.setOnClickPendingIntent(R.id.logoWidget, pendingIntent);
 
-            Intent clickIntentTemplate = new Intent(context, Detail.class);
+            Intent clickIntentTemplate = new Intent(context, DetailRecipe.class);
 
             PendingIntent clickPendingIntentTemplate = TaskStackBuilder.create(context)
                     .addNextIntentWithParentStack(clickIntentTemplate)

@@ -1,29 +1,41 @@
 package com.softwaremobility.services;
 
+import android.app.Activity;
+import android.app.ActivityOptions;
 import android.app.IntentService;
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Binder;
+import android.os.Bundle;
 import android.support.v4.app.TaskStackBuilder;
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.Target;
 import com.softwaremobility.adapters.MoninListAdapter;
 import com.softwaremobility.data.MoninContract;
 import com.softwaremobility.fragments.Detail;
+import com.softwaremobility.monin.DetailRecipe;
 import com.softwaremobility.monin.MoninRecipes;
 import com.softwaremobility.monin.R;
+import com.softwaremobility.network.NetworkConnection;
 import com.softwaremobility.widgets.MoninWidget;
+
+import java.util.concurrent.ExecutionException;
 
 import static com.softwaremobility.utilities.Utils.convertBooleanToInt;
 import static com.softwaremobility.utilities.Utils.convertStringToBoolean;
+import static com.softwaremobility.utilities.Utils.getColor;
 
 /**
  * Created by darkgeat on 9/8/16.
@@ -103,7 +115,22 @@ public class MoninWidgetIntentService extends RemoteViewsService {
                     return null;
                 }
                 RemoteViews remoteViews = new RemoteViews(getPackageName(),R.layout.item_list_recipes);
-
+                remoteViews.setTextViewText(R.id.infoRecipeTextItemList,cursor.getString(cursor.getColumnIndex(MoninContract.MoninEntry.Key_Description)));
+                Bitmap flagImage = null,recipeImage = null;
+                try {
+                    flagImage = Glide.with(MoninWidgetIntentService.this).load(cursor.getBlob(cursor.getColumnIndex(MoninContract.MoninEntry.Key_ImageFlag)))
+                            .asBitmap()
+                            .override(60, 40)
+                            .into(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL).get();
+                    recipeImage = Glide.with(MoninWidgetIntentService.this).load(cursor.getBlob(cursor.getColumnIndex(MoninContract.MoninEntry.Key_ImageRecipe)))
+                            .asBitmap()
+                            .into(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL).get();
+                }catch (InterruptedException | ExecutionException e){
+                    e.printStackTrace();
+                }
+                remoteViews.setImageViewBitmap(R.id.flagItemListRecipe, flagImage);
+                remoteViews.setImageViewBitmap(R.id.imageItemList, recipeImage);
+                remoteViews.setTextViewText(R.id.ratingStarItemList, String.valueOf(cursor.getInt(cursor.getColumnIndex(MoninContract.MoninEntry.Key_Rating))));
 
                 return remoteViews;
             }
