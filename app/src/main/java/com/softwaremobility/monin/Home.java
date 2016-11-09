@@ -13,22 +13,32 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.softwaremobility.data.MoninContract;
 import com.softwaremobility.dialogs.SimpleCustomDialog;
+import com.softwaremobility.listeners.AdsListener;
 import com.softwaremobility.preferences.MoninPreferences;
 import com.softwaremobility.utilities.Utils;
 
 import java.util.Locale;
 
-public class Home extends AppCompatActivity {
+public class Home extends AppCompatActivity{
 
     private RelativeLayout ghostScreen;
     private Intent intent = null;
+    private AdView adView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        adView = (AdView)findViewById(R.id.adView);
+        adView.setAdListener(new AdsListener(this));
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         Typeface typeface = Typeface.createFromAsset(getAssets(),getString(R.string.font_path));

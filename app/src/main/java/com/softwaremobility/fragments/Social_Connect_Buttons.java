@@ -1,12 +1,15 @@
 package com.softwaremobility.fragments;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -31,6 +34,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationServices;
 import com.sina.weibo.sdk.auth.AuthInfo;
 import com.sina.weibo.sdk.auth.Oauth2AccessToken;
 import com.sina.weibo.sdk.auth.WeiboAuthListener;
@@ -39,6 +44,8 @@ import com.sina.weibo.sdk.exception.WeiboException;
 import com.softwaremobility.monin.R;
 import com.softwaremobility.network.Connection;
 import com.softwaremobility.network.NetworkConnection;
+import com.softwaremobility.utilities.PermissionsMarshmallow;
+import com.softwaremobility.utilities.Utils;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -48,7 +55,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Social_Connect_Buttons extends Fragment implements FacebookCallback<LoginResult>, View.OnClickListener,
-        GoogleApiClient.OnConnectionFailedListener, LocationListener{
+        GoogleApiClient.OnConnectionFailedListener, GoogleApiClient.ConnectionCallbacks, LocationListener, com.google.android.gms.location.LocationListener {
 
     private static final String TAG = Social_Connect_Buttons.class.getSimpleName();
     private static final int RC_GOOGLE_LOGIN = 1000;
@@ -56,11 +63,14 @@ public class Social_Connect_Buttons extends Fragment implements FacebookCallback
     private CallbackManager mCallbackManager;
     private GoogleApiClient mGoogleApiClient = null;
 
+    private LocationRequest mLocationRequest;
+
     private GoogleSignInOptions mGoogleSignInOptions = null;
     private ISocialLoginListener mISocialLoginListener = null;
     private LoginButton loginButton;
     public static AuthInfo authInfo = null;
     public static SsoHandler ssoHandler = null;
+    private Location currentLocation;
 
 
     @Override
@@ -134,15 +144,16 @@ public class Social_Connect_Buttons extends Fragment implements FacebookCallback
 
     }
 
-    private void sendSuccessAnswer(String token, String name, String email, String provider){
+    private void sendSuccessAnswer(String token, String name, String email, String provider) {
         try {
             JSONObject object = new JSONObject();
-            object.put(getString(R.string.key_token),token);
+            object.put(getString(R.string.key_token), token);
             object.put(getString(R.string.key_name), name);
             object.put(getString(R.string.key_email), email);
             object.put(getString(R.string.key_provider), provider);
-            mISocialLoginListener.onLoginSuccess(object,provider);
-        }catch (JSONException e){}
+            mISocialLoginListener.onLoginSuccess(object, provider);
+        } catch (JSONException e) {
+        }
     }
 
     @Override
@@ -176,7 +187,7 @@ public class Social_Connect_Buttons extends Fragment implements FacebookCallback
                 String email = googleSignInAccount.getEmail();
                 sendSuccessAnswer(idToken, name, email, getString(R.string.value_google));
             }
-        }else {
+        } else {
             if (ssoHandler != null) {
                 ssoHandler.authorizeCallBack(requestCode, resultCode, data);
             }
@@ -197,32 +208,32 @@ public class Social_Connect_Buttons extends Fragment implements FacebookCallback
 
     @Override
     public void onClick(View v) {
-        if(v.getId() == R.id.google_button || v.getId() == R.id.google_login_button){
+        if (v.getId() == R.id.google_button || v.getId() == R.id.google_login_button) {
             mISocialLoginListener.onLoginProgress();
             Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
             getActivity().startActivityForResult(signInIntent, RC_GOOGLE_LOGIN);
-        }else if (v.getId() == R.id.facebook_button){
+        } else if (v.getId() == R.id.facebook_button) {
             LoginManager.getInstance().logOut();
             loginButton.performClick();
-        }else if (v.getId() == R.id.weibo_button){
+        } else if (v.getId() == R.id.weibo_button) {
             ConnectWeibo();
         }
     }
 
     private void ConnectWeibo() {
-        authInfo = new AuthInfo(getContext(),getString(R.string.weibo_app_id),getString(R.string.weibo_redirect_url),"");
-        ssoHandler = new SsoHandler((Activity) getContext(),authInfo);
+        authInfo = new AuthInfo(getContext(), getString(R.string.weibo_app_id), getString(R.string.weibo_redirect_url), "");
+        ssoHandler = new SsoHandler((Activity) getContext(), authInfo);
         ssoHandler.authorize(new WeiboAuthListener() {
             @Override
             public void onComplete(Bundle bundle) {
                 Oauth2AccessToken token = Oauth2AccessToken.parseAccessToken(bundle);
                 final String tokenStr = token.getToken();
-                Log.d(TAG,"OnComplete, token: " + tokenStr);
+                Log.d(TAG, "OnComplete, token: " + tokenStr);
                 Uri uri = Uri.parse("show.json");
-                Map<String,String> params = new HashMap<>();
-                params.put("uid",token.getUid());
-                params.put("access_token",token.getToken());
-                Map<String,String> headers = new HashMap<>();
+                Map<String, String> params = new HashMap<>();
+                params.put("uid", token.getUid());
+                params.put("access_token", token.getToken());
+                Map<String, String> headers = new HashMap<>();
                 headers.put(getString(R.string.key_content_type), getString(R.string.header_json));
                 NetworkConnection.productionPath("https://api.weibo.com/2/users");
                 NetworkConnection.testPath("https://api.weibo.com/2/users");
@@ -236,7 +247,7 @@ public class Social_Connect_Buttons extends Fragment implements FacebookCallback
                             JSONObject object = new JSONObject(response);
                             String name = object.getString("name");
                             String photo = object.getString("profile_image_url");
-                            sendSuccessAnswer(tokenStr,name,"","Weibo");
+                            sendSuccessAnswer(tokenStr, name, "", "Weibo");
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -244,20 +255,20 @@ public class Social_Connect_Buttons extends Fragment implements FacebookCallback
 
                     @Override
                     public void onErrorResponse(String error, String message, int code) {
-                        Log.e("Error",message + ", " + error);
+                        Log.e("Error", message + ", " + error);
 
                     }
-                }).doRequest(Connection.REQUEST.GET,uri,params,null,null);
+                }).doRequest(Connection.REQUEST.GET, uri, params, null, null);
             }
 
             @Override
             public void onWeiboException(WeiboException e) {
-                Log.e(TAG,"Exception" + e.getMessage());
+                Log.e(TAG, "Exception" + e.getMessage());
             }
 
             @Override
             public void onCancel() {
-                Log.e(TAG,"OnCancel");
+                Log.e(TAG, "OnCancel");
             }
         });
     }
@@ -287,22 +298,25 @@ public class Social_Connect_Buttons extends Fragment implements FacebookCallback
                 mGoogleApiClient = new GoogleApiClient.Builder(getActivity())
                         .enableAutoManage(getActivity(), this)
                         .addApi(Auth.GOOGLE_SIGN_IN_API, mGoogleSignInOptions)
+                        .addApi(LocationServices.API)
+                        .addConnectionCallbacks(this)
+                        .addOnConnectionFailedListener(this)
                         .build();
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
 
     }
 
-    public void setSocialLoginListener(ISocialLoginListener listener){
+    public void setSocialLoginListener(ISocialLoginListener listener) {
         mISocialLoginListener = listener;
     }
 
     @Override
     public void onLocationChanged(Location location) {
-
+        currentLocation = location;
     }
 
     @Override
@@ -320,6 +334,24 @@ public class Social_Connect_Buttons extends Fragment implements FacebookCallback
 
     }
 
+    @Override
+    public void onConnected(@Nullable Bundle bundle) {
+        mLocationRequest = LocationRequest.create();
+        mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+        mLocationRequest.setInterval(1000);
+
+        if (PermissionsMarshmallow.permissionForGPSGranted(getActivity())) {
+            LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, mLocationRequest, this);
+        }
+
+        currentLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
+    }
+
+    @Override
+    public void onConnectionSuspended(int i) {
+
+    }
+
 
     public interface ISocialLoginListener {
         public void onLoginSuccess(JSONObject data, String provider);
@@ -329,5 +361,19 @@ public class Social_Connect_Buttons extends Fragment implements FacebookCallback
         public void onLoginCancelled();
 
         public void onLoginProgress();
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        mGoogleApiClient.connect();
+    }
+
+    @Override
+    public void onStop() {
+        if (mGoogleApiClient.isConnected()) {
+            mGoogleApiClient.disconnect();
+        }
+        super.onStop();
     }
 }

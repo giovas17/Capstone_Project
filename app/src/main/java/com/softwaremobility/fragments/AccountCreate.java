@@ -1,8 +1,10 @@
 package com.softwaremobility.fragments;
 
 import android.content.Intent;
+import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.method.HideReturnsTransformationMethod;
@@ -14,11 +16,17 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationListener;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationServices;
 import com.softwaremobility.json.JSONUtils;
 import com.softwaremobility.monin.*;
 import com.softwaremobility.network.Connection;
 import com.softwaremobility.network.NetworkConnection;
 import com.softwaremobility.objects.CheckBoxImageView;
+import com.softwaremobility.utilities.PermissionsMarshmallow;
 import com.softwaremobility.utilities.Utils;
 
 import org.json.JSONException;
@@ -28,7 +36,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class AccountCreate extends Fragment implements View.OnClickListener, NetworkConnection.ResponseListener {
+public class AccountCreate extends Fragment implements View.OnClickListener, NetworkConnection.ResponseListener,
+        GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener{
 
     private static final String LOG_TAG = AccountCreate.class.getSimpleName();
 
@@ -36,10 +45,17 @@ public class AccountCreate extends Fragment implements View.OnClickListener, Net
     private EditText mCompleteNameEditText;
     private EditText mEmailEditText;
     private EditText mUserNameEditText;
+    private Location currentLocation;
+    private GoogleApiClient mGoogleApiClient;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mGoogleApiClient = new GoogleApiClient.Builder(getContext())
+                .addApi(LocationServices.API)
+                .addConnectionCallbacks(this)
+                .addOnConnectionFailedListener(this)
+                .build();
     }
 
     @Override
@@ -136,4 +152,45 @@ public class AccountCreate extends Fragment implements View.OnClickListener, Net
         Utils.showSimpleMessage(getContext(),getString(R.string.error),errorMessage);
     }
 
+    @Override
+    public void onConnected(@Nullable Bundle bundle) {
+        LocationRequest request = LocationRequest.create();
+        request.setInterval(2000);
+        request.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+
+        if (PermissionsMarshmallow.permissionForGPSGranted(getActivity())) {
+            LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, request, this);
+        }
+
+        currentLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
+    }
+
+    @Override
+    public void onConnectionSuspended(int i) {
+
+    }
+
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+
+    }
+
+    @Override
+    public void onLocationChanged(Location location) {
+        currentLocation = location;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        mGoogleApiClient.connect();
+    }
+
+    @Override
+    public void onStop() {
+        if (mGoogleApiClient.isConnected()){
+            mGoogleApiClient.disconnect();
+        }
+        super.onStop();
+    }
 }
